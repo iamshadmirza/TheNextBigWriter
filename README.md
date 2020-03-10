@@ -23,4 +23,4 @@ You just have to create an account on hashnode.com and share the username at thi
 That's it, you're in. Select "The Next Big Writer" under publications to submit your draft.
 
 ## What about topics?
-You can choose your topic as per your comfort level. If you need a suggestion, reach out on issues if you need suggestions.
+You can choose your topic as per your comfort level. We will be adding topics as issues and you can comment "I want to take this" on them. Once you're done with your first draft, send a pull request and reference your "issue". We will merge the PR after review and mark it as completed 🎉. Let's get started.
