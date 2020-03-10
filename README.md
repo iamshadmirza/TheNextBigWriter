@@ -1,4 +1,4 @@
-# TheNextBigWriter
+# The Next Big Writer
 
 ## About
 
