@@ -23,4 +23,18 @@ You just have to create an account on hashnode.com and share the username at thi
 That's it, you're in. Select "The Next Big Writer" under publications to submit your draft.
 
 ## What about topics?
-You can choose your topic as per your comfort level. We will be adding topics as issues and you can comment "I want to take this" on them. Once you're done with your first draft, send a pull request and reference your "issue". We will merge the PR after review and mark it as completed 🎉. Let's get started.
+We will be adding topics as issues and you can comment "I want to take this" on them. Once you're done with your first draft, send a pull request and reference your "issue". We will merge the PR after review and mark it as completed 🎉.
+You can also choose your topic as per your comfort level. Just create an issue with your topic name and drop the "I'm taking this" comment. This will make sure only one person is writing on one topic.
+
+## Contribution workflow
+The current workflow for submitting a post is as follows:
+
+1. Clone this repository - `git clone https://github.com/iamshadmirza/TheNextBigWriter.git`
+2. Create a branch - `git checkout -b post/your-post-name`
+3. Create a subdirectory of your choosen topic. example: top-10-node-tricks
+4. Create a new file with the naming convention of title-of-the-post.md inside the created directory.
+5. Write your post
+6. Commit the post to the repo
+7. Create a pull request on master
+8. In the pull request title, put the title of your post - Add My Post Title
+9. Submit the pull request. Feedback and reviews will be done of pull request. 
