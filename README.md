@@ -12,9 +12,9 @@ To solve this problem, we are announcing “The Next Big Writer” experiment:
 The aim is to get you to reach so that you get feedback (likes/comments), which is the only way to improve.
 
 ## How to join?
-You just have to create an account on hashnode.com and share the username at this [link](https://gist.github.com/iamshadmirza/d20e70fb8ee80de669d60777429385cc) so that we can add you as a contributor.  
+You just have to create an account on hashnode.com and add your username to [this](next-big-writers) section by raising a PR so that we can add you as a contributor.  
 
-That's it, you're in. Select "The Next Big Writer" under publications to submit your draft.
+Once your usernamed is added you can select "The Next Big Writer" under publications on hashnode to submit your draft.
 
 
 ## How to Contribute?
@@ -34,3 +34,6 @@ The current workflow for submitting a post is as follows:
 ## What about topics?
 We will be adding topics as issues and you can comment "I want to take this" on them. Once you're done with your first draft, send a pull request and reference your "issue". We will merge the PR after review and mark it as completed 🎉.
 You can also choose your topic as per your comfort level. Just create an issue with your topic name and drop the "I'm taking this" comment. This will make sure only one person is writing on one topic.
+
+## Next Big Writers
+[Username](hashnodeusername)
