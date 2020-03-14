@@ -11,22 +11,13 @@ To solve this problem, we are announcing “The Next Big Writer” experiment:
 
 The aim is to get you to reach so that you get feedback (likes/comments), which is the only way to improve.
 
-## How it works?
-It involves just 3 simple steps:
-1. Send a PR with your draft.
-2. Get constructive feedback and improvise.
-3. Submit to ["The Next Big Writer"](https://thenextbigwriter.tech) publication on Hashnode to publish.
-
 ## How to join?
 You just have to create an account on hashnode.com and share the username at this [link](https://gist.github.com/iamshadmirza/d20e70fb8ee80de669d60777429385cc) so that we can add you as a contributor.  
 
 That's it, you're in. Select "The Next Big Writer" under publications to submit your draft.
 
-## What about topics?
-We will be adding topics as issues and you can comment "I want to take this" on them. Once you're done with your first draft, send a pull request and reference your "issue". We will merge the PR after review and mark it as completed 🎉.
-You can also choose your topic as per your comfort level. Just create an issue with your topic name and drop the "I'm taking this" comment. This will make sure only one person is writing on one topic.
 
-## Contribution workflow
+## How to Contribute?
 The current workflow for submitting a post is as follows:
 
 1. Clone this repository - `git clone https://github.com/iamshadmirza/TheNextBigWriter.git`
@@ -38,3 +29,8 @@ The current workflow for submitting a post is as follows:
 7. Create a pull request on master
 8. In the pull request title, put the title of your post - Add My Post Title
 9. Submit the pull request. Feedback and reviews will be done of pull request. 
+
+
+## What about topics?
+We will be adding topics as issues and you can comment "I want to take this" on them. Once you're done with your first draft, send a pull request and reference your "issue". We will merge the PR after review and mark it as completed 🎉.
+You can also choose your topic as per your comfort level. Just create an issue with your topic name and drop the "I'm taking this" comment. This will make sure only one person is writing on one topic.
