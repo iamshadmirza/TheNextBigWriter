@@ -12,28 +12,31 @@ To solve this problem, we are announcing “The Next Big Writer” experiment:
 The aim is to get you to reach so that you get feedback (likes/comments), which is the only way to improve.
 
 ## How to join?
+
 You just have to create an account on hashnode.com and add your username to [this](next-big-writers) section by raising a PR so that we can add you as a contributor.  
 
-Once your usernamed is added you can select "The Next Big Writer" under publications on hashnode to submit your draft.
-
+Once your username is added you can select "The Next Big Writer" under publications on hashnode to submit your draft.
 
 ## How to Contribute?
+
 The current workflow for submitting a post is as follows:
 
 1. Clone this repository - `git clone https://github.com/iamshadmirza/TheNextBigWriter.git`
 2. Create a branch - `git checkout -b post/your-post-name`
-3. Create a subdirectory of your choosen topic. example: top-10-node-tricks
-4. Create a new file with the naming convention of title-of-the-post.md inside the created directory.
-5. Write your post
-6. Commit the post to the repo
-7. Create a pull request on master
-8. In the pull request title, put the title of your post - Add My Post Title
-9. Submit the pull request. Feedback and reviews will be done of pull request. 
-
+3. Move into the subdirectory of your chosen topic, e.g react
+4. Create a directory of your chosen topic. example: top-10-node-tricks
+5. Create a new file with the naming convention of title-of-the-post.md inside the created directory.
+6. Write your post
+7. Commit the post to the repo
+8. Create a pull request on master
+9. In the pull request title, put the title of your post - Add My Post Title
+10. Submit the pull request. Feedback and reviews will be done of pull-request. 
 
 ## What about topics?
+
 We will be adding topics as issues and you can comment "I want to take this" on them. Once you're done with your first draft, send a pull request and reference your "issue". We will merge the PR after review and mark it as completed 🎉.
 You can also choose your topic as per your comfort level. Just create an issue with your topic name and drop the "I'm taking this" comment. This will make sure only one person is writing on one topic.
 
 ## Next Big Writers
-[Username](hashnodeusername)
+
+[Username](hashnode_username)
