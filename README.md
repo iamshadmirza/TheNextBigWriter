@@ -39,4 +39,26 @@ You can also choose your topic as per your comfort level. Just create an issue w
 
 ## Next Big Writers
 
-[Username](hashnode_username)
+[@chekwube_peters](https://hashnode.com/@chekwube_peters)
+[@faizhameed](https://hashnode.com/@faizhameed)
+[@vin18](https://hashnode.com/@vin18)
+[@bendtherules](https://hashnode.com/@bendtherules)
+[@imsowmiya](https://hashnode.com/@imsowmiya)
+[@mishraaSoumya](https://hashnode.com/@mishraaSoumya)
+[@nitishk72](https://hashnode.com/@nitishk72)
+[@rajat2502](https://hashnode.com/@rajat2502)
+[@Dheerajmalik](https://hashnode.com/@Dheerajmalik)
+[@rahul14](https://hashnode.com/@rahul14)
+[@PragatiVerma18](https://hashnode.com/@PragatiVerma18)
+[@hemantreddy](https://hashnode.com/@hemantreddy)
+[@Srihari44](https://hashnode.com/@Srihari44)
+[@lawrence](https://hashnode.com/@lawrence)
+[@utkarshbhimte](https://hashnode.com/@utkarshbhimte)
+
+## Meet your Mentors
+
+[Swapnil Agarwal](https://twitter.com/SwapAgarwal)
+[Kamlesh Chandnani](https://twitter.com/_kamlesh_)
+[Aditya Agarwal](https://twitter.com/dev__adi)
+[Vishwa Mehta](https://twitter.com/VishwaMehta30)
+[Shad Mirza](https://twitter.com/iamshadmirza)
