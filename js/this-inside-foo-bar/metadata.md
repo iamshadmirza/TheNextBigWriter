@@ -1,4 +1,4 @@
-Title - What is the value of `this` inside foo.bar()? 
+Title - What is `this` inside foo.bar()? 
 
 Tags - #JavaScript, #ecmascript, #ecma, #tc39
 
