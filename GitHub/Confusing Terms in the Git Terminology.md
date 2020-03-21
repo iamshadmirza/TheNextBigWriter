@@ -1,11 +1,13 @@
 ## Confusing Terms in the Git Terminology
 
-Git and GitHub are at the core of open source in today's scenario. However, there are a lot of confusing terms that often seem similar yet can have conflicting meanings and uses. Let's eradicate these confusing terms by decoding their underlying meanings and sense.
+Git and GitHub are at the core of open source in today's scenario. However, there are a lot of confusing terms that often seem similar yet can have conflicting meanings and uses. Let's eradicate these confusing terms by decoding their underlying meanings.
+
+**NOTE**: *This is not a beginner tutorial, the article expects some knowledge of Git and GitHub.*
 
 - ### Origin and Upstream
 
 From Git Documentation:
-> When a repo is cloned, it has a default remote called origin that points to your fork on GitHub, not the original repo it was forked from.
+> When you fork a repo and clone it locally, then their is a default remote called origin that points to your fork on GitHub, not the original repo it was forked from.
 
 >To keep track of the original repo, you need to add another remote named upstream
 
@@ -14,7 +16,7 @@ This confusion arises when you are working on the clone of a forked repo. **Upst
 ![Upstream and origin](https://i2.wp.com/i.stack.imgur.com/L5wRU.png)
 source: [https://stackoverflow.com](https://stackoverflow.com)
 
-**Remember**: Remotes are simply an alias that store the URL of repositories.
+**Remember**: Remotes like upstream & master are simply an alias that stores the URL of repositories. They can be named anything but its a convention to set original repo's remote as upstream.
 
 - ### Fetch and Pull
 
@@ -23,7 +25,7 @@ From Git Documentation:
 
 >git pull incorporates changes from a remote repository into the current branch.
 
-**git fetch** is the command that tells your local git to retrieve the latest meta-data info from the original yet doesn’t do any file transferring. It’s more like just checking to see if there are any changes available. **git pull** on the other hand does that AND copies those changes from the remote repository.
+**git fetch** is the command that tells your local git to retrieve the latest meta-data info from the original yet doesn’t do any file transferring. It’s more like just checking to see if there are any changes available. **git pull**, on the other hand **`git fetch`** and **applies the changes from the remote repository to the local repository**.
 
 ![fetch vs pull](https://i.stack.imgur.com/nWYnQ.png)
 source: [https://stackoverflow.com](https://stackoverflow.com)
@@ -31,6 +33,10 @@ source: [https://stackoverflow.com](https://stackoverflow.com)
 **Remember**:  `git pull` is shorthand for `git fetch` followed by `git merge FETCH_HEAD`
 
 Putting it rather simply, **git fetch** can be used to know the changes done in the remote repo/branch since your last pull. This is useful to allow for checking before doing a **git pull**, which could change files in your current branch and working copy and potentially lose your changes, etc.
+
+**git fetch** can be helpful in several scenarios, one of them being slightly optimizing your work flow to reduce network hits. Each `git pull` involves a `git fetch`, so if you want to get pull on five different branches, you have four redundant extra `git fetch` calls.
+
+Also, **git fetch** can often save you in situations you are working offline or working on the go, maybe in a train, but you want to make sure that you have all the changes from every branch available to you while working remotely. You can simply `git fetch` once while you're on the network, and then leave. Later, without a network connection, you can manually `git checkout branch`; `git merge origin/branch` to merge the changes you previously fetched.
 
 - ### Switch and Checkout
 
@@ -42,7 +48,10 @@ From Git Documentation:
 `git switch` is not a new feature but an additional command to switch/change branch feature which is already available in the overloaded `git checkout` command. Hence, to separate out the functionalities, the **Git 2.23** introduced the new git switch branch command which is an attempt to start to scale back to the responsibilities without breaking backward compatibility.
 
 ![switch vs checkout](https://bluecast.tech/wp-content/uploads/2019/09/git_switch_branch_vs_git_Checkout_branch-1024x521.png)
+
 source: [https://bluecast.tech](https://bluecast.tech)
+
+The **git checkout** command operates upon three distinct entities: files, commits, and branches. To put it simply, if you modify a file but haven't staged the changes, then **`git checkout <filename>`** will discard the modifications and you would still remain on the same branch, while **`git checkout <commit hash>`** lets you rollback to an older commit, whereas **`git checkout <branch>`** would switch the branches, hence, to avoid this confusion, **`git switch`** was introduced.
 
 - ### HEAD~ and HEAD^
 
@@ -61,4 +70,3 @@ In case you want to connect with me, follow the links below:
 
 
 [LinkedIn](https://www.linkedin.com/in/pragati-verma-b22a1b17b/) | [GitHub](https://github.com/PragatiVerma18) | [Twitter](https://twitter.com/Pragati56242726) | [Instagram](https://www.instagram.com/pragativerma18/) | [Medium](https://medium.com/@itispragativerma)
-
