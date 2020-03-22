@@ -9,11 +9,11 @@ Git and GitHub are at the core of open source in today's scenario. However, ther
 - ### Origin and Upstream
 
 From Git Documentation:
-> When you fork a repo and clone it locally, then their is a default remote called origin that points to your fork on GitHub, not the original repo it was forked from.
+> When you fork a repo and clone it locally, then there is a default remote called origin that points to your fork on GitHub, not the original repo it was forked from.
 
 >To keep track of the original repo, you need to add another remote named upstream
 
-This confusion arises when you are working on the clone of a forked repo. **Upstream** is what you would use to **fetch from the original repo** in order to keep your local copy in sync with the project you wanted to contributed to. Meanwhile, **Origin** is what you would use to **pull and push code to your own fork** and thereafter you can contribute back to the upstream repo by making a pull request.
+This confusion arises when you are working on the clone of a forked repo. **Upstream** is what you would use to **fetch from the original repo** in order to keep your local copy in sync with the project you wanted to contribute to. Meanwhile, **Origin** is what you would use to **pull and push code to your own fork** and thereafter you can contribute back to the upstream repo by making a pull request.
 
 
 ![Upstream and origin](https://camo.githubusercontent.com/ecad6c4a2c9f895f23aa28ce995e5f188d7d4283/687474703a2f2f692e696d6775722e636f6d2f746932703735642e706e67)
