@@ -13,9 +13,13 @@ The aim is to get you to reach so that you get feedback (likes/comments), which 
 
 ## How to join?
 
-You just have to create an account on hashnode.com and add your username to [this](next-big-writers) section by raising a PR so that we can add you as a contributor.  
+You just have to create an account on hashnode.com and add your username in this README.md itself by raising a PR so that we can add you as a contributor.  
 
 Once your username is added you can select "The Next Big Writer" under publications on hashnode to submit your draft.
+
+## Telegram group for questions and update
+Please join the telegram group and connect with your mentors. We will be able to answer your questions here as well.  
+Group link 👉 https://t.me/joinchat/LVu-1VBsGlShlcH1_F2mhQ
 
 ## How to Contribute?
 
@@ -31,6 +35,7 @@ The current workflow for submitting a post is as follows:
 8. Create a pull request on master
 9. In the pull request title, put the title of your post - Add My Post Title
 10. Submit the pull request. Feedback and reviews will be done of pull-request. 
+11. Submit to our hashnode [publication](https://thenextbigwriter.tech/) after review.
 
 ## What about topics?
 
