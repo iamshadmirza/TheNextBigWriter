@@ -60,7 +60,7 @@ But, if you take out a function from a object and call it separately, there is n
 
 ## 📖 What does the spec say? 
 
-TLDR - If you would like to see me actually going through the spec, this video might be more interesting.
+TLDR - If you would like to see me actually go through the spec, this video might be more interesting.
 
 %[https://youtu.be/RV27K79PDuI]
 [Part 1](https://youtu.be/j894fgpStZI) of the video covers previous sections
