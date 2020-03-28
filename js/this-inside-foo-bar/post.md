@@ -42,13 +42,11 @@ Effectively -
 | non-strict | global object |
 
 
-##### For functions, 
-⭐️ `fn()` translates to `fn.​call(this)`   
-(where `this` is taken from caller's scope)
+## Method to function, 
 
-##### Method to function, 
-Now, if we were to rewrite `foo.bar()` using a intermediate variable - ` bar1 = foo.​bar;  bar1()`,  
-then the value of `this` inside bar will change from `foo` to the `outer this`.
+⭐️ Now, if we were to rewrite the method call as a function call, then the value of `this` will change from `foo` (object) to either `undefined` or `global`.
+
+One example of this is rewriting `foo.bar()` using a intermediate variable - ` fn = foo.​bar;  fn()`
 
 If `bar` was referencing other values from foo using `this`, those values will become undefined or resolve to a wrong variable.
 
