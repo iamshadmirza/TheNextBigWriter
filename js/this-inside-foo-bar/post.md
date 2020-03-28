@@ -77,17 +77,17 @@ Link - 1. https://tc39.es/ecma262/#sec-evaluatecall, 2. https://tc39.es/ecma262/
 This `foo.bar` structure is defined in the spec as a [PropertyReference](https://tc39.es/ecma262/#sec-ispropertyreference).  
 Think of PropertyReference as anything that is valid as the left side of an assignment expression, if you were assigning to the property of a object or primitive.  
 
-**PropertyReference = Reference + base is object or primitive**
+PropertyReference = Reference + base is object or primitive
 
 ![PropertyReference illustration](https://cdn.hashnode.com/res/hashnode/image/upload/v1585431425436/5XBWmcI5y.png)
 
-Some examples of valid and invalid PropertyReference -
+Some examples of valid and invalid PropertyReference 👇
 
 %[https://gist.github.com/bendtherules/3467664a9c567617342b73c3681c1dc7]
 
 ### Steps
-⭐️ If it is a PropertyReference, then set `thisValue` to base of the PropertyReference (i.e. `foo` in `foo.bar`).  
-⭐️ Or else, take thisValue from surrounding Environment Record.
+1. If it is a PropertyReference, then set `thisValue` to base of the PropertyReference (i.e. `foo` in `foo.bar`).  
+2. Or else, take thisValue from surrounding Environment Record.
 
 The obtained `thisValue` is forwarded to the abstract operation [Call](https://tc39.es/ecma262/#sec-call), which in turn verifies that the resolved value of `foo.bar` is a function and then calls the internal method [function.[[Call]]](https://tc39.es/ecma262/#sec-built-in-function-objects-call-thisargument-argumentslist) with the same thisValue.  
 This [[call]] interface is very similar to the `function.call` public interface and can be approximated with that. One small diff. we noted earlier is that [[call]] changes `this` value from undefined to global object in non-strict mode.
