@@ -44,7 +44,7 @@ Effectively -
 
 ⭐️ Now, if we were to rewrite the method call as a function call, then the value of `this` will change from `foo` (object) to either `undefined` or `global`.
 
-One example of this is rewriting `foo.bar()` using a intermediate variable - ` fn = foo.​bar;  fn()`
+One example of this is rewriting `foo.bar()` using a intermediate variable - ` fn = foo.​bar;  fn()`.
 
 If `bar` was referencing other values from foo using `this`, those values will become undefined or resolve to a wrong variable.
 
