@@ -92,10 +92,24 @@ Some examples of valid and invalid PropertyReference -
 The obtained `thisValue` is forwarded to the abstract operation [Call](https://tc39.es/ecma262/#sec-call), which in turn verifies that the resolved value of `foo.bar` is a function and then calls the internal method [function.[[Call]]](https://tc39.es/ecma262/#sec-built-in-function-objects-call-thisargument-argumentslist) with the same thisValue.  
 This [[call]] interface is very similar to the `function.call` public interface and can be approximated with that. One small diff. we noted earlier is that [[call]] changes `this` value from undefined to global object in non-strict mode.
 
-## A few interesting things to note -
-1. `foo.bar` is resolved as a string or symbol "bar" within the object `foo` - and goes through the [usual resolution process](https://tc39.es/ecma262/#sec-getvalue) honoring getters, proxies and prototype chains.
-2. The function `foo.bar` doesn't need to be a  [simple function object](https://tc39.es/ecma262/#sec-ecmascript-function-objects), but it can be anything with a [[call]] interface like a exotic [bound function](https://tc39.es/ecma262/#sec-bound-function-exotic-objects-call-thisargument-argumentslist) or a proxy.  
- Bound functions, for example, ignore the `thisValue` that was passed in and instead uses internal [[BoundThis]] as the actual this (which is stored from when it was created). That is why one solution to this callback problem is to bind a function before passing it as a callback.
+Note - `foo.bar` is resolved as a string or symbol "bar" within the object `foo` - and goes through the [usual resolution process](https://tc39.es/ecma262/#sec-getvalue) honoring getters, proxies and prototype chains.
+
+## Bound function and Arrow function -
+The function `foo.bar` doesn't need to be a  [simple function object](https://tc39.es/ecma262/#sec-ecmascript-function-objects), but it can be anything with a [[call]] interface like a exotic [bound function](https://tc39.es/ecma262/#sec-bound-function-exotic-objects-call-thisargument-argumentslist) or a proxy.  
+
+**Bound functions** ignore the `thisValue` that was passed in and instead uses internal [[BoundThis]] as the actual `this`. [[BoundThis]] is the custom thisValue that was passed while binding using `Function.bind`.  
+That is why one solution to this callback problem is to bind a function to the object before passing it as a callback.
+
+
+**Arrow function** is a type of function object whose `this` value is resolved from the lexical scope.  
+Its [[call]] method ignores the received thisValue (from Call abstract method) and always resolves `this` from its lexical scope, like any other free variable in a closure.
+
+![thisMode in function objects](https://cdn.hashnode.com/res/hashnode/image/upload/v1585433951432/jnD8M_NB3.png)
+**👇 thisMode in function objects**
+
+It is a function object with internal [[ThisMode]] slot set to lexical.
+
+This can be another solution to the callback problem - creating a arrow function inside a object constructor, will ensure that `this` always resolves to the object.
 
 ----
 
