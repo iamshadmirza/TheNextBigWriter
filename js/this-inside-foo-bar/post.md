@@ -9,8 +9,6 @@ But calling a method directly works as expected.
 
 Why is that? **Can the spec help us explain this difference?**
 
-*(For simplicity, let's assume the caller doesn't intend to pass a different `this` value here, and calls onClick() directly)*
-
 ------
 
 ## The explanation
