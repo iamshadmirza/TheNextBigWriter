@@ -15,14 +15,14 @@ Why is that? **Can the spec help us explain this difference?**
 
 ## The explanation
 
-##### For methods,
+## For methods,
+
 ⭐️ `foo.​bar()` translates to `foo.bar.call(foo)`.
 
 That is, when a method (function which is accessed as a object property) is called, the object gets passed as `this` inside the function.
 
 So, in this case -  
-*What* →  foo is passed as `this` inside bar  
-*When* →  if bar is a function and *accessed as object property* (i.e. foo.bar).  
+## For functions, 
 
 ##### For functions, 
 ⭐️ `fn()` translates to `fn.​call(this)`   
@@ -36,7 +36,7 @@ If `bar` was referencing other values from foo using `this`, those values will b
 
 🧠 This is exactly the reason why passing methods as callback changes the value of `this` (passed within it). Instead of calling a method directly, callback is passed as a function and called later by some other code.
 
-##### In other words,
+## In other words,
 
 ⭐️ When `foo.bar` is called, the function `bar` is not aware that it is "attached" to the object foo. Based on the exact syntax of a function call, if the language can figure out a clear `someThing.someFunction()` structure, then it will happily forward someThing as this.
 
@@ -68,7 +68,7 @@ Some examples of valid and invalid PropertyReference -
 The obtained `thisValue` is forwarded to the abstract operation [Call](https://tc39.es/ecma262/#sec-call), which in turn verifies that the resolved value of `foo.bar` is a function and then calls the internal method [function.[[Call]]](https://tc39.es/ecma262/#sec-built-in-function-objects-call-thisargument-argumentslist) with the same thisValue.  
 This [[call]] interface is very similar to the `function.call` public interface and can be approximated with that.
 
-#### A few interesting things to note -
+## A few interesting things to note -
 1. `foo.bar` is resolved as a string or symbol "bar" within the object `foo` - and goes through the [usual resolution process](https://tc39.es/ecma262/#sec-getvalue) honoring getters, proxies and prototype chains.
 2. The function `foo.bar` doesn't need to be a  [simple function object](https://tc39.es/ecma262/#sec-ecmascript-function-objects), but it can be anything with a [[call]] interface like a exoctic [bound function](https://tc39.es/ecma262/#sec-bound-function-exotic-objects-call-thisargument-argumentslist) or a proxy.  
  Bound functions, for example, ignore the `thisValue` that was passed in and instead uses internal [[BoundThis]] as the actual this (which is stored from when it was created). That is why one solution to this callback problem is to bind a function before passing it as a callback.
