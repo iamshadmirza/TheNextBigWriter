@@ -22,6 +22,11 @@ Why is that? **Can the spec help us explain this difference?**
 That is, when a method (function which is accessed as a object property) is called, the object gets passed as `this` inside the function.
 
 So, in this case -  
+**What** →  foo is passed as `this` inside bar  
+**When** →  if bar is a function and *accessed as object property* (i.e. foo.bar).  
+
+(*Note* - We are using the [Function.call](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/call) method above to estimate what the lanuage is doing internally by passing a custom `this` value)
+
 ## For functions, 
 ⭐️ `fn()` translates to `fn.​call(undefined)`   
 
