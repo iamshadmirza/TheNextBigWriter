@@ -32,15 +32,15 @@ So, in this case -
 Now, if we were to rewrite `foo.bar()` using a intermediate variable - ` bar1 = foo.​bar;  bar1()`,  
 then the value of `this` inside bar will change from `foo` to the `outer this`.
 
-If `bar` was referencing other values from foo using `this`, those values will be undefined or resolve to a wrong variable.
+If `bar` was referencing other values from foo using `this`, those values will become undefined or resolve to a wrong variable.
 
-🧠 This is exactly the reason why passing methods as callback changes the value of `this` passed within it. Instead of calling a method directly, callback is passed as a function and called later.
+🧠 This is exactly the reason why passing methods as callback changes the value of `this` (passed within it). Instead of calling a method directly, callback is passed as a function and called later by some other code.
 
 ##### In other words,
 
 ⭐️ When `foo.bar` is called, the function `bar` is not aware that it is "attached" to the object foo. Based on the exact syntax of a function call, if the language can figure out a clear `someThing.someFunction()` structure, then it will happily forward someThing as this.
 
-So, if you take out a function from a object and call it, there is no way to figure out which object it was originally attached to. Hence, `this` will be set from caller's scope.
+But, if you take out a function from a object and call it separately, there is no way to figure out which object it was originally attached to. Hence, `this` will be set from caller's scope.
 
 -------
 
