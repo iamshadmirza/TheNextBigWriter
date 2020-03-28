@@ -23,7 +23,7 @@ So, in this case -
 **What** →  foo is passed as `this` inside bar  
 **When** →  if bar is a function and *accessed as object property* (i.e. foo.bar).  
 
-(*Note* - We are using the [Function.call](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/call) method above to estimate what the lanuage is doing internally by passing a custom `this` value)
+(*Note* - We are using the [Function.call](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/call) method above to estimate what the language is doing internally, by passing a custom `this` value)
 
 ## For functions, 
 ⭐️ `fn()` translates to `fn.​call(undefined)`   
