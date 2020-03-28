@@ -2,7 +2,7 @@
 
 ## The problem
 
-![Code showing - method which is passed as callback loses reference to original obj as this, but calling obj.method() directly works](https://cdn.hashnode.com/res/hashnode/image/upload/v1584584613992/rwNrFCElj.png)
+![Code showing - method which is passed as callback loses reference to original obj as this, but calling foo.bar() directly works](https://cdn.hashnode.com/res/hashnode/image/upload/v1585425858545/Ut1FVXRIJ.png)
 
 When we pass a method as callback, it loses reference to the original object (as `this`) when it is called.
 But calling a method directly works as expected.
