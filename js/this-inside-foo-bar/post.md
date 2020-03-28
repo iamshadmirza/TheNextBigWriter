@@ -54,7 +54,7 @@ If `bar` was referencing other values from foo using `this`, those values will b
 
 ⭐️ When `foo.bar` is called, the function `bar` is not aware that it is "attached" to the object foo. Based on the exact syntax of a function call, if the language can figure out a clear `someThing.someFunction()` structure, then it will happily forward someThing as this.
 
-But, if you take out a function from a object and call it separately, there is no way to figure out which object it was originally attached to. Hence, `this` will be set from caller's scope.
+But, if you take out a function from a object and call it separately, there is no way to figure out which object it was originally attached to. Hence, `this` will be undefined.
 
 -------
 
