@@ -70,8 +70,8 @@ This [[call]] interface is very similar to the `function.call` public interface 
 
 #### A few interesting things to note -
 1. `foo.bar` is resolved as a string or symbol "bar" within the object `foo` - and goes through the [usual resolution process](https://tc39.es/ecma262/#sec-getvalue) honoring getters, proxies and prototype chains.
-2. The function `foo.bar` doesn't need to be a  [simple function object](https://tc39.es/ecma262/#sec-ecmascript-function-objects), but it can be anything with a [[call]] interface like a exoctic bound function or a proxy.  
- [Bound functions](https://tc39.es/ecma262/#sec-bound-function-exotic-objects-call-thisargument-argumentslist), for example, ignore the `thisValue` that was passed in and instead uses internal [[BoundThis]] as the actual this. This is why one solution is to bind a function before passing it as a callback.
+2. The function `foo.bar` doesn't need to be a  [simple function object](https://tc39.es/ecma262/#sec-ecmascript-function-objects), but it can be anything with a [[call]] interface like a exoctic [bound function](https://tc39.es/ecma262/#sec-bound-function-exotic-objects-call-thisargument-argumentslist) or a proxy.  
+ Bound functions, for example, ignore the `thisValue` that was passed in and instead uses internal [[BoundThis]] as the actual this (which is stored from when it was created). That is why one solution to this callback problem is to bind a function before passing it as a callback.
 
 ----
 
