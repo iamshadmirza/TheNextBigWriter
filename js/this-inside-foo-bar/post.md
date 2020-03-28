@@ -68,25 +68,29 @@ But, if you take out a function from a object and call it separately, there is n
 
 Link - 1. https://tc39.es/ecma262/#sec-evaluatecall, 2. https://tc39.es/ecma262/#sec-ispropertyreference
 
+### PropertyReference
+
 This `foo.bar` structure is defined in the spec as a [PropertyReference](https://tc39.es/ecma262/#sec-ispropertyreference).  
 Think of PropertyReference as anything that is valid as the left side of an assignment expression, if you were assigning to the property of a object or primitive.  
 
 **PropertyReference = Reference + base is object or primitive**
 
+![PropertyReference illustration](https://cdn.hashnode.com/res/hashnode/image/upload/v1585431425436/5XBWmcI5y.png)
+
 Some examples of valid and invalid PropertyReference -
 
 %[https://gist.github.com/bendtherules/3467664a9c567617342b73c3681c1dc7]
 
-
+### Steps
 ⭐️ If it is a PropertyReference, then set `thisValue` to base of the PropertyReference (i.e. `foo` in `foo.bar`).  
 ⭐️ Or else, take thisValue from surrounding Environment Record.
 
 The obtained `thisValue` is forwarded to the abstract operation [Call](https://tc39.es/ecma262/#sec-call), which in turn verifies that the resolved value of `foo.bar` is a function and then calls the internal method [function.[[Call]]](https://tc39.es/ecma262/#sec-built-in-function-objects-call-thisargument-argumentslist) with the same thisValue.  
-This [[call]] interface is very similar to the `function.call` public interface and can be approximated with that.
+This [[call]] interface is very similar to the `function.call` public interface and can be approximated with that. One small diff. we noted earlier is that [[call]] changes `this` value from undefined to global object in non-strict mode.
 
 ## A few interesting things to note -
 1. `foo.bar` is resolved as a string or symbol "bar" within the object `foo` - and goes through the [usual resolution process](https://tc39.es/ecma262/#sec-getvalue) honoring getters, proxies and prototype chains.
-2. The function `foo.bar` doesn't need to be a  [simple function object](https://tc39.es/ecma262/#sec-ecmascript-function-objects), but it can be anything with a [[call]] interface like a exoctic [bound function](https://tc39.es/ecma262/#sec-bound-function-exotic-objects-call-thisargument-argumentslist) or a proxy.  
+2. The function `foo.bar` doesn't need to be a  [simple function object](https://tc39.es/ecma262/#sec-ecmascript-function-objects), but it can be anything with a [[call]] interface like a exotic [bound function](https://tc39.es/ecma262/#sec-bound-function-exotic-objects-call-thisargument-argumentslist) or a proxy.  
  Bound functions, for example, ignore the `thisValue` that was passed in and instead uses internal [[BoundThis]] as the actual this (which is stored from when it was created). That is why one solution to this callback problem is to bind a function before passing it as a callback.
 
 ----
