@@ -23,6 +23,19 @@ That is, when a method (function which is accessed as a object property) is call
 
 So, in this case -  
 ## For functions, 
+⭐️ `fn()` translates to `fn.​call(undefined)`   
+
+In case of a normal function call - `this` value within the function will be undefined.
+
+But, there is a slight catch here. In case of non-strict mode, if `this` is set to `undefined` or `null` (as above), then it is internally replaced with the global object.  
+
+Effectively -
+
+| **mode**       | **this value**  |
+|------------|---------------|
+| strict     | undefined     |
+| non-strict | global object |
+
 
 ##### For functions, 
 ⭐️ `fn()` translates to `fn.​call(this)`   
