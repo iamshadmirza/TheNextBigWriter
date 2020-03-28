@@ -63,8 +63,9 @@ But, if you take out a function from a object and call it separately, there is n
 TLDR - If you would like to see me actually go through the spec, this video might be more interesting.
 
 %[https://youtu.be/RV27K79PDuI]
-[Part 1](https://youtu.be/j894fgpStZI) of the video covers previous sections
+[Part 1](https://youtu.be/j894fgpStZI) of the video covers previous sections.
 
+-----
 
 ![EvaluateCall- if IsPropertyReference, set this to base object](https://cdn.hashnode.com/res/hashnode/image/upload/v1584625813403/gPjSBUHIZ.png)
 
