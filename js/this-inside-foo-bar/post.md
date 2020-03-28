@@ -95,7 +95,5 @@ This [[call]] interface is very similar to the `function.call` public interface 
 
 ----
 
-*That's all! Hope you had a interesting read.  
-I would really appreciate if you leave some feedback.*
-
-*If you want to start reading ecmascript specification yourself, https://timothygu.me/es-howto/ is a great starting point.*
+🎬 That's all! Hope you had a interesting read.  
+I would really appreciate if you leave some feedback 🌀
