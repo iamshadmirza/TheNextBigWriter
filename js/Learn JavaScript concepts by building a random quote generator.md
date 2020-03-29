@@ -11,8 +11,8 @@ Lets first create three different files in our folder as
 - script.js will contain the actual code which makes our app work.
 
 
-## 1. creating the content of the app
-The first step is to create a UI. Here is our index.html file look like 
+## 1. creating the content for the app
+The first step is to create a UI. Here is how our index.html file will look like 
 
 ```html
 <!DOCTYPE html>
@@ -30,7 +30,7 @@ The first step is to create a UI. Here is our index.html file look like
           <h2>Random quote</h2>
           <p>wanna see a random quote ?</p>
           <!--button to display random quote-->
-          <button class="btn">Generate</button>
+          <button onclick="displayQuote()" class="btn">Generate<button>
 
         </div>
         <div id="quote">
@@ -45,47 +45,61 @@ The first step is to create a UI. Here is our index.html file look like
 ![Screenshot (238).png](https://cdn.hashnode.com/res/hashnode/image/upload/v1585025931498/AIvbN-aiu.png)
 
 And this is how it looks like in the browser. Wait a minute, It doesn't look nice right. 
-## 2. Styling the content
+## 2. Style the content
 Let's make it appealing by adding our style.css file
 
 ```css
-body{background-color: indigo;  margin:auto;}
-h2{background-color: #1c1c1c; color:#ffffff;
-padding:10px;
-font-family: arial;
-text-align: center;}
+body{
+     background-color: indigo; 
+     margin:auto;
+    }
 
-.btn{height:50px; width:150px;
-font-size: 18px;
-color:#ffffff;
-background-color: dodgerblue;
-border:none;
-padding:5px;
-border-radius: 5px;}
+h2{
+   background-color: #1c1c1c; 
+   color:#ffffff;
+   padding:10px;
+   font-family: arial;
+   text-align: center;
+  }
 
-.card{padding:15px 30px 15px 30px;
-margin:40px auto;
-max-width:500px;
-max-height:300px;
-text-align: center;
-background-color: #ffffff;
-border-radius: 5px;
-} 
+.btn{
+     height:50px; 
+     width:150px;
+     font-size:18px;
+     color:#ffffff;
+     background-color: dodgerblue;
+     border:none;
+     padding:5px;
+     border-radius:5px;
+     }
 
-p{font-family:'Segoe UI';
-font-weight:400;
-font-size: 20px;}
+.card{
+      padding:15px 30px 15px 30px;
+      margin:40px auto;
+      max-width:500px;
+      max-height:300px;
+      text-align: center;
+      background-color: #ffffff;
+      border-radius:5px;
+     } 
 
-img{height:25px;
-width:25px;
-}
+p{
+  font-family:'Segoe UI';
+  font-weight:400;
+  font-size:20px;
+ }
+
+img{
+    height:25px;
+    width:25px;
+   }
 ```
 And boom ! this looks great now.
 
 
 ![Screenshot (240).png](https://cdn.hashnode.com/res/hashnode/image/upload/v1585027409630/ZG-vq7LdP.png)
 
-Now let's think about how we are going to make it work. We need to figure out a way to display random quotes after clicking a button. And We will go with the simplest way to do it. How? let's see.
+Now let's think about how we are going to make it work. We need to figure out a way to display random quotes after clicking a button. And we will go just with the simplest approach in a moment.
 
 Forget coding. let's just think about what we have to do. 
 okay. First, we will need quotes. We will have to store them somewhere and do something such that we can display a random quote after clicking a button. That's it. 
@@ -138,9 +152,7 @@ quotes.length;
 #### Accessing Items in an Array
 An item in a JavaScript array is accessed by referring to the index number of the item in square brackets.
 ```javascript
-quotes[2];
-<!--Output : -->
-Persist while others are quitting.
+quotes[2]; // Output: Persist while others are quitting.
 
 ```
 But here we will not access like this. We want a random index to display a random quote. Then how do we do that? We will use the math object.
@@ -173,9 +185,9 @@ But Math.floor() is always rounding down to the nearest decimal, therefore, ever
 In order to get a random number between 0 to the length of our array, we will multiply the math.random() by quotes.length. 
 Finally the random index we want is 
 ```javascript
-let index=Math.floor(Math.random()*quotes.length);
-<!--This will give a random quote-->
-quotes[index];
+let index=Math.floor(Math.random()*quotes.length); // returns a random number that will be stored in our index variable
+
+quotes[index]; // Output: return quote at the `index`
 ```
 index will always generate a valid array index number for our quotes array.
 So we figured out how to retrieve a random quote from the quotes array. But we don't want to display just a string. We are going to do it nicely using template literals.
@@ -185,7 +197,7 @@ So we figured out how to retrieve a random quote from the quotes array. But we d
 The Template Literal, introduced in ES6, is a new way to create a string. With it comes new features that allow us more control over dynamic strings in our programs.
 
 Template literals are string literals allowing embedded expressions. It can contain placeholders. These are indicated by the dollar sign and curly braces (${expression}).
-```
+```javascript
 `string text ${expression} string text`;
 ```
 
@@ -250,24 +262,23 @@ div.innerHTML=quote;
 We are almost done. Just need to invoke this displayQuote function whenever we click the generate button.
 
 ### Events in javaScript
+>
 Events are actions that take place in the browser that can be initiated by either the user or the browser itself. 
-Like in our case it's when the user clicks the generate button.
 
-### Event listeners
-An event listener watches for an event on an element. We will use the addEventListener() method to listen for the event. addEventListener() takes two mandatory parameters . 
-- the event it is listening for 
-- and the listener callback function.
+In our case, It's when the user clicks a button.
 
-```javascript
-target.addEventListener(type, listener [, options]);
-```
-We have a button element with class="btn". The click event will call the displayQuote function every time we click on the button and display a random quote.
+### Inline event handler
+>
+An event handler is a JavaScript function that runs when an event fires.
 
-```javascript
-let btn=document.querySelector('.btn');
-btn.addEventListener('click', displayQuote);
+Directly on the button, we will add an attribute called onclick. The attribute value will be a function we created called displayQuote().
+
+```html
+<button onclick="displayQuote()" class="btn">Generate</button>
 
 ```
+So displayQuote() function will be called whenever user clicks the generate button and a random quote will be displayed. 
+
 ![Screenshot (248).png](https://cdn.hashnode.com/res/hashnode/image/upload/v1585072651093/2_UBWoiXG.png)
 
 And we are done. congratulations. We built a random quote generator while learning some JavaScript concepts.
