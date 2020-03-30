@@ -26,7 +26,7 @@ Then came Hacktoberfest, the celebration season for open source, but it was dish
 
 Then, I came across [Google Code-In](https://codein.withgoogle.com/), I thought if I could have known and participated in it when I was in school, it would've been great. However, I saw a chance that I could apply as a mentor, so I did. I was selected as a Google Code-In Mentor for [CircuitVerse.org](https://circuitverse.org/) and it was truly an incredible journey to see so many young individuals participate and contribute to open source. Thereafter, I mentored a few other open source events like- NWoC(IIT Patna), KWoC KOSS(IIT Kharagpur), JMOC(JIIT Noida) and currently I am [GSSoC](https://www.gssoc.tech/)(GirlScript Foundation) Mentor for 'Water Monitoring System'.
 
-This journey of mine may not be a big inspiration story, however, this is what made me what I am today.
+My journey may not sound as a big inspiration story, however, this is what made me what I am today.
 This helped me learn what Steve Jobs said:
 
 >"Life can be much broader once you discover one simple fact. And that is that everything around you that you call life, was made up by people that are no smarter than you. And you can change it. You can influence it. You can build your own things that other people can use."
