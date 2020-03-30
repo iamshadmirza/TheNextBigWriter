@@ -32,7 +32,7 @@ This helped me learn what Steve Jobs said:
 >"Life can be much broader once you discover one simple fact. And that is that everything around you that you call life, was made up by people that are no smarter than you. And you can change it. You can influence it. You can build your own things that other people can use."
 
 #### What am I today?
-Today, I am an aspiring full stack web developer, learning to make awesome websites that can cater user demands in an efficient and better way. Furthermore, my team is also a [SIH](http://sih.gov.in/) finalist this year. Also, I am eager to share my knowledge and understanding of things, so, I decide to write, and hence, I am here with the Next Big Writer.
+Today, I am an aspiring full stack web developer, learning to make awesome websites that can cater user demands in an efficient and better way. Furthermore, my team is also a [SIH](http://sih.gov.in/) finalist this year. Also, I am eager to share my knowledge and understanding of things, so I decided to write, and hence, I am here with the Next Big Writer. 
 
 In case you want to connect with me, follow the links below:
 
