@@ -1,6 +1,6 @@
 ## How I got into tech?
 
-To begin with my writing journey, I feel that I must introduce myself, and what's better than to write about my journey in tech and give an insight into what brought me here.
+To begin with my writing journey, I felt that I shall start with introducing myself, and what's better than to write about my journey in tech and give an insight into what brought me here.
 
 #### The Beginning
 I have been enthusiastic about how the software stuff works, what goes behind the screen of my computer and I always imagined how they're made. I have been keenly interested in computer science since school whether they taught us QBasic, LOGO, VisualC++, SQL, HTML, programming in C++ or networking. Anything related to computer science lured me to read and know more about it. What added to my childhood fantasies was the movie - Jobs(2013) which got me really interested in the life of the tech giant and visionary Steve Jobs. Thereafter, I read several books on his life and wished to be as great as him someday. But as he once said- 
