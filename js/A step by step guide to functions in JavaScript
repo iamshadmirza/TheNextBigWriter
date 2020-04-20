@@ -1,6 +1,6 @@
-Functions are one of the basic concepts in programming. The name itself suggests, it performs a function. A function is a block of code that you can use whenever you need and wherever you required to avoid repeated code blocks. Once a function is written, it can be used over and over and over again. They usually take some input, perform some operations on it and produce some output.  
+Functions are one of the basic concepts in programming. The name itself suggests, it performs a function. A function is a block of code that you can use whenever you need and wherever you required to avoid repeated code blocks. Once a function is written, it can be used over and over again. They usually take some input, perform some operations on it and produce some output.  
 
-In this article, we will learn about functions In JavaScript, different ways of defining functions, how hoisting and function scope works and a few more concepts regarding functions. Let's begin.
+In this article, we will learn about functions in JavaScript, different ways of defining functions, how hoisting and function scope works and a few more concepts regarding functions. Let's begin.
 
 ## The function declaration 
 Functions are defined, or declared, with the **function **keyword. The declaration begins with the function keyword, followed by the name of the function then set of parentheses, which can be used for optional parameters. The code of the function is contained in curly braces.
@@ -10,7 +10,7 @@ function nameOfFunction(parameters) {
     // Code to be executed
 }
 ```
-Functions allow a programmer to divide a big program into a number of small and manageable functions.
+Functions allow a programmer to divide a big program into several small and manageable functions.
 For example, If you are building a simple calculator then sum() will be a function. It will take two or more integers as input and return the sum as the result. 
 
 ```javascript
@@ -20,7 +20,7 @@ return a+b;
 }
 ```
 The name of the function can be anything, as long as it follows the same rules as declaring variables.
-JavaScript functions are written in camel case too. It's a best practice to actually tell *what the function is doing *by giving the function name a verb as prefix. Also, the name should describe only one concept.
+JavaScript functions are written in camel case too. It's a best practice to actually tell *what the function is doing *by giving the function name a verb as a prefix. Also,  function should perform only one task and have a single responsibility. Thus naming should be based on that one responsibility.
 
 ### 📌 Calling Functions
 Defining a function does not execute it. Defining it simply names the function and specifies what to do when the function is called. Calling the function actually performs the specified actions with the indicated parameters. We can call it by writing the name of the function, followed by parenthesis ().
@@ -31,9 +31,9 @@ sum(5,3);
 //output : 8
 ```
 ### 📌 Function Parameters 
+>
 Parameters are input that gets passed into functions as names and behave as local variables. A function can have multiple parameters or no parameters at all.
-If you declared a parameter, but did not pass an argument to it, your parameter would be undefined.
-In JavaScript, function parameters default to *undefined*.
+If you declared a parameter, but did not pass an argument to it, your parameter would be undefined. It means that function parameters default to undefined.
 
 
 ### 📌 Function arguments
@@ -44,7 +44,7 @@ The argument is the actual value that gets passed into the function.
 *You define a function with parameters, you call a function with arguments.* In function sum() a and b are parameters whereas 5 and 3 are arguments.
 
 ### 📌 The return Statement
-A JavaScript function can have an optional return statement. This is required if you want to return a value from a function. This statement should be the last statement in a function. The return statement stops the execution of a function and returns a value from that function.
+A JavaScript function can have an optional return statement. This is required if you want to return a value from a function. This statement should be last in a function. The return statement stops the execution of a function and returns a value from that function.
 A function always returns a value, If the return value is not specified then *undefined* is returned.
 
 ## The function expression 
@@ -69,7 +69,7 @@ Function declarations are hoisted but function expressions are not.
 Functions defined in a function declaration are hoisted, which means that you can use the function although it's defined below the code using it. Hoisted functions are made available everywhere within the current scope. For example
 
 ```javascript
-//function is invoked before declaration
+//function is invoked before the declaration
 sum(5,3);  //output : 8
 //function declaration
 function sum(a,b){
@@ -93,7 +93,7 @@ IIFEs follows a particular syntax as shown below.
 // code to be executed
 })();
 ```
-Let's break it down to make more sense. We basically have a function defined inside parentheses, and then we append () to execute that function.
+Let's break it down to make more sense. We have a function defined inside parentheses, and then we append () to execute that function.
 ```javascript
 ( /*function*/ )();
 ```
@@ -130,7 +130,7 @@ Also if there is only one parameter, then there is no need for parenthesis. For 
 ```javascript
 const square = a =>return a*a;    //removed parenthesis
 const square = a => a*a; 
-// In this case, we can also omit return keyword.
+// In this case, we can also omit the return keyword.
 ```
 The primary use case of arrow functions is for functions that get applied over and over again to items in a list. For example, if you have an array of values that you want to transform using a [map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map), an arrow function is ideal.
 ```javascript
