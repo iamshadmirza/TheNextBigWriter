@@ -20,7 +20,7 @@ return a+b;
 }
 ```
 The name of the function can be anything, as long as it follows the same rules as declaring variables.
-JavaScript functions are written in camel case too. It's a best practice to actually tell *what the function is doing *by giving the function name a verb as a prefix. Also,  function should perform only one task and have a single responsibility. Thus naming should be based on that one responsibility.
+JavaScript functions are written in camel case too. It's a best practice to tell *what the function is doing *by giving the function name a verb as a prefix. Also,  function should perform only one task and have a single responsibility. Thus naming should be based on that one responsibility.
 
 ### 📌 Calling Functions
 Defining a function does not execute it. Defining it simply names the function and specifies what to do when the function is called. Calling the function actually performs the specified actions with the indicated parameters. We can call it by writing the name of the function, followed by parenthesis ().
