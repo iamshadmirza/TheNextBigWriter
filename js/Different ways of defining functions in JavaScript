@@ -1,12 +1,12 @@
 Functions are one of the basic concepts in programming. The name itself suggests, it performs a function. A function is a block of code that you can use whenever you need and wherever you required to avoid repeated code blocks. Once a function is written, it can be used over and over and over again. They usually take some input, perform some operations on it and produce some output.  
 
-In JavaScript there are several ways of defining functions. We will see them one by one.
+In this article, we will learn about functions In JavaScript, different ways of defining functions, how hoisting and function scope works and a few more concepts regarding functions. Let's begin.
 
 ## The function declaration 
 Functions are defined, or declared, with the **function **keyword. The declaration begins with the function keyword, followed by the name of the function then set of parentheses, which can be used for optional parameters. The code of the function is contained in curly braces.
 
 ```javascript
-function nameOfFunction() {
+function nameOfFunction(parameters) {
     // Code to be executed
 }
 ```
@@ -19,25 +19,33 @@ function sum(a,b){
 return a+b;
 }
 ```
-### Calling Functions
-Defining a function does not execute it. Defining it simply names the function and specifies what to do when the function is called. Calling the function actually performs the specified actions with the indicated parameters. 
+The name of the function can be anything, as long as it follows the same rules as declaring variables.
+JavaScript functions are written in camel case too. It's a best practice to actually tell *what the function is doing *by giving the function name a verb as prefix. Also, the name should describe only one concept.
+
+### 📌 Calling Functions
+Defining a function does not execute it. Defining it simply names the function and specifies what to do when the function is called. Calling the function actually performs the specified actions with the indicated parameters. We can call it by writing the name of the function, followed by parenthesis ().
 
 ```javascript
 //function call
 sum(5,3);
 //output : 8
 ```
-### Function Parameters 
+### 📌 Function Parameters 
 Parameters are input that gets passed into functions as names and behave as local variables. A function can have multiple parameters or no parameters at all.
+If you declared a parameter, but did not pass an argument to it, your parameter would be undefined.
+In JavaScript, function parameters default to *undefined*.
 
-### Function arguments
+
+### 📌 Function arguments
 The argument is the actual value that gets passed into the function.
 
 ![functionblog1.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1587151140206/6UMKRMJdW.png)
-In function sum() a and b are parameters whereas 5 and 3 are arguments.
 
-### The return Statement
-A JavaScript function can have an optional return statement. This is required if you want to return a value from a function. This statement should be the last statement in a function.
+*You define a function with parameters, you call a function with arguments.* In function sum() a and b are parameters whereas 5 and 3 are arguments.
+
+### 📌 The return Statement
+A JavaScript function can have an optional return statement. This is required if you want to return a value from a function. This statement should be the last statement in a function. The return statement stops the execution of a function and returns a value from that function.
+A function always returns a value, If the return value is not specified then *undefined* is returned.
 
 ## The function expression 
 A function expression looks similar to function declarations, except that the function is assigned to a variable name. 
@@ -49,11 +57,12 @@ return a+b;
 sum(5,3);
 //output : 8
 ```
-
-
 Functions stored in variables do not need function names. They are always invoked (called) using the variable name. The function above ends with a semicolon because it is a part of an executable statement.
 
-#### Difference between function declaration and function expression
+## Hoisting 
+Hoisting was thought up as a general way of thinking about how execution contexts work in JavaScript. Hoisting means variable and function declarations are moved to the top of scope before execution. It allows you to use a function before you declare it in your code.
+
+### 📌 Difference between function declaration and function expression
 > 
 Function declarations are hoisted but function expressions are not. 
 
@@ -88,7 +97,7 @@ Let's break it down to make more sense. We basically have a function defined ins
 ```javascript
 ( /*function*/ )();
 ```
-The function becomes a function expression which is immediately executed. 
+The function becomes a function expression that is immediately executed. 
 Here are few important things about IIFEs
 
 - The variable within the expression can not be accessed from outside it. 
@@ -138,6 +147,67 @@ Important points about arrow functions
 - Arrow functions cannot be named.
 - Arrow functions lexically bind the current **this **value. That means  The treatment of this within an arrow function is different than within non-arrow function expressions.
 
+There are a few more ways we can define functions, which aren't discussed in this article. The decision of which declaration type to choose depends on the situation. 
+
+##  Function scope vs Global scope
+When you declare a variable inside a function, you can access that variable only within the function. It is not visible outside of the function. For example
+```javascript
+function sayHi(){
+    var message="Hello world";  //function scope
+    console.log(message);
+    }
+   
+ sayHi();   // output : Hello world
+ console.log(message);   // output : message is not defined
+```
+Variables defined outside any function, block, or module scope have global scope. Variables in the global scope can be accessed from everywhere. Every function can have access to the global scope.
+```javascript
+    var message="Hello world";  //Global scope
+    function sayHi(){
+    console.log(message);
+    }
+   
+ sayHi();   // output : Hello world
+```
+
+## Lexical scope
+When a function is defined in another function, the inner function has access to the outer function’s variables. This behavior is called lexical scoping. However, the outer function does not have access to the inner function’s variables.
+```javascript
+function outerFunction() {
+  var user='Rutik';
+
+  function innerFunction() {
+    var job = 'student';
+    console.log(user +"is a " + job);   //output : Rutik is a student
+  }
+
+  console.log(job) //output : Error, job is not defined
+}
+```
+So when we access *user* variable in *innerfunction()* ,it works. But accessing job variable outside *innerfunction()* shows error.
+
+> 
+To visualize how scopes work, you can imagine one-way glass. You can see the outside, but people from the outside cannot see you.
+
+
+## Functions vs Methods
+A method, like a function, is a set of instructions that perform a task. The difference is that a method is associated with an object, while a function is not. 
+```javascript
+var person ={
+name:  'Rutik',
+job: 'student',
+//method
+sayHi : function(name){
+            console.log("Hi " + this.name);
+            }
+};
+person.sayHi();  //output : Hi Rutik
+
+```
+When used as object properties, functions are called methods.
+
 ## Conclusion
-The decision which declaration type to choose depends on the situation. There are a few more ways that aren't discussed in this article. But I hope you got a little idea about different ways we can define functions.
-Happy learning!
+So we learned what are functions, how to call them, the difference between parameters and arguments, different ways we can define functions, how hoisting and function scope works in JavaScript. And I hope you got a nice idea about functions in JavaScript.
+I keep writing about the things I learned. You can connect with me on [Twitter](https://twitter.com/WankhadeRutik), [Github](https://github.com/rutikwankhade)  or [Linkedin](https://www.linkedin.com/in/rutik-wankhade).
+
+⚡ Happy learning !
