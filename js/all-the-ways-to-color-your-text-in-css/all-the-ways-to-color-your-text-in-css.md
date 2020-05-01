@@ -1,6 +1,27 @@
 Color property in css is a very common property. It is used whenever there is a need to provide different color to Text. There are many ways to provide values to this property. Let's have a look into all those ways.
 
-#### 1. Hexadecimal Values
+#### 1. Color Names
+
+The simple and common way is through color names like red, green, blue, orange etc. There are total 140 color names in HTML and CSS color specification.
+
+Some of the common color names:
+
+> red, orange, blue, cyan, aqua
+
+```css
+h1 {
+    color: orange;
+}
+```
+
+> <h6 style="color:orange">I'm Orange</h6>
+> <h6 style="color:red">I'm Red</h6>
+> <h6 style="color:blue">I'm Blue</h6>
+> <h6 style="color:seagreen">I'm Sea Green</h6>
+
+These names are easy to remember as compared to other values for color property. All these color values represents the plain solid colors without any transparency.
+
+#### 2. Hexadecimal Values
 
 The word **hexadecimal** refers to a numerical value that uses 16 as a base instead of 10. A hexadecimal value can have 16 values for each digit in a number:
 
@@ -35,7 +56,7 @@ h1 {
 }
 ```
 
-> <h3 style="color: #ff0000">I am completely opaque<h1>
+> <h3 style="color: #ff0000">I am completely opaque<h3>
 
 ```css
 // semi-transparent color
@@ -44,13 +65,13 @@ h1 {
 }
 ```
 
-> <h3 style="color: #FF000080">I am semi-transparent<h1>
+> <h3 style="color: #FF000080">I am semi-transparent<>
 
 📌 **Browser Compatibility**
 
 The browser support for #RRGGBBAA hex codes is great. IE doesn’t support it but otherwise you should be covered. Check [Can I Use](https://caniuse.com/#feat=css-rrggbbaa) for details if you’re curious.
 
-#### 2. RGB Values
+#### 3. RGB Values
 
 An RGB color values is specified with the [[rgb]] function which has the following syntax:
 
@@ -80,26 +101,26 @@ The alpha parameter in the above function is a number between 0.0 (fully transpa
 ```css
 // rgba value to provide full opacity
 h1 {
-    color: rgba (255, 0, 0, 1);
+    color: rgba (0, 0, 255, 1);
 }
 ```
 
-> <h3 style="color: rgba(255, 0, 0, 1)">I am fully opaque<h3>
+> <h3 style="color: rgba(0, 0, 255, 1)">I am fully opaque<h3>
 
 ```css
 // rgba value with transparency
 h1 {
-    color: rgba (255, 0, 0, 0.3);
+    color: rgba (0, 0, 255, 0.3);
 }
 ```
 
-> <h3 style="color: rgba(255, 0, 0, 0.3)">I am semi-transparent</h3>
+> <h3 style="color: rgba(0, 0, 255, 0.3)">I am semi-transparent</h3>
 
 📌 **Browser Compatibility**
 
 The browser support for rgba() is great. Check [Can I Use](https://caniuse.com/#feat=rgba) for details if you’re curious.
 
-#### 3. HSL Values
+#### 4. HSL Values
 
 HSL stands for hue, saturation, and lightness - and represents a cylindrical-coordinate representation of colors. This looks syntactically similar to rgb values but the ranges are different. An HSL color value is specified with the hsl() function, which has the following syntax:
 
@@ -149,3 +170,9 @@ h1 {
 📌 **Browser Compatibility**
 
 The browser support for hsl() and hsla() is great. Check [Can I Use](https://caniuse.com/#feat=hsla) for details if you’re curious.
+
+-----
+
+That’s all for now for this article. I have tried to share my knowledge, hoping to help others. Please comment your valuable suggestions and feedback.
+
+[Dev.to](https://dev.to/mishraasoumyaa) | [Twitter](https://twitter.com/mishraaSoumya)
