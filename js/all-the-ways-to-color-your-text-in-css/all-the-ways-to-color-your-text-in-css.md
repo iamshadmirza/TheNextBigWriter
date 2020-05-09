@@ -1,4 +1,4 @@
-Color property in css is a very common property. It is used whenever there is a need to provide different color to Text. There are many ways to provide values to this property. Let's have a look into all those ways.
+Color property in CSS is a very common one. It is used whenever there is a need to provide different colors to Text. There are many ways to provide value to this property. Let's have a look into all those ways.
 
 #### 1. Color Names
 
@@ -120,32 +120,26 @@ h1 {
 
 The browser support for rgba() is great. Check [Can I Use](https://caniuse.com/#feat=rgba) for details if you’re curious.
 
-#### 4. HSL Values
+#### 4. HSL / HSLA Values
 
-HSL stands for hue, saturation, and lightness - and represents a cylindrical-coordinate representation of colors. This looks syntactically similar to rgb values but the ranges are different. An HSL color value is specified with the hsl() function, which has the following syntax:
+HSL stands for hue, saturation, and lightness which is extended with an alpha value to be HSLA. It represents a cylindrical-coordinate representation of colors. This looks syntactically similar to rgb values but the ranges are different. An HSL / HSLA color value is specified with the hsl( ) / hsla( ) function, which has the following syntax:
 
 > hsl (hue, saturation, lightness)
+
+> hsla (hue, saturation, lightness, alpha)
 
 **Hue**: Think of a color wheel. Around 0 and 360 degrees are reds. 120 degree is where greens are and 240 degree are blues. Use anything in between 0-360. Values above and below will be modulus 360.
 **Saturation**: 0% is completely desaturated (grayscale). 100% is fully saturated (full color).
 **Lightness**: 0% is completely dark (black). 100% is completely light (white). 50% is average lightness.
 **alpha**: Opacity/Transparency value. 0 is fully transparent. 1 is fully opaque. 0.5 is 50% transparent.
 
-```css
-// valid hsl values - different shades of 
+```text
+// hsl values - different shades of green
 
 Green: hsl(120, 100%, 50%)
 Light Green: hsl(120, 100%, 75%)
 Pastel Green: hsl(120, 60%, 70%)
 ```
-
-📌 **HSLA**
-
-HSLA values are an extension of HSL values with an alpha value, which specifies the opacity of the color. An HSLA color value is specified with the hsla() function, which has the following syntax:
-
-> hsla (hue, saturation, lightness, alpha)
-
-The alpha parameter is a number between 0.0 (fully transparent) and 1.0 (fully opaque).
 
 ```css
 // hsla value to provide full opacity
@@ -158,7 +152,7 @@ h1 {
 > <h3 style="color: hsla(120, 100%, 50%, 1)">I am fully opaque<h3>
 
 ```css
-// hsla value with transparency
+// hsla value with 50% transparency
 
 h1 {
     color: hsla(120, 100%, 50%, 0.5);
@@ -169,7 +163,62 @@ h1 {
 
 📌 **Browser Compatibility**
 
-The browser support for hsl() and hsla() is great. Check [Can I Use](https://caniuse.com/#feat=hsla) for details if you’re curious.
+The browser support for hsl( ) and hsla( ) is great. Check [Can I Use](https://caniuse.com/#feat=hsla) for details if you’re curious.
+
+### No-Comma Color Functions in CSS
+
+If you have noticed, that every single color function actually needs two functions, one for transparency and one without transparency. There is a new syntax which eliminates the need for having 2 functions.This new syntax eliminates the commas between each values in the function.
+
+```css
+/* New Syntax */
+rgb(0 128 255)
+
+rgb(0 128 255 / 50%)
+
+hsl(198deg 28% 50%)
+
+hsl(198deg 28% 50% / 50%)
+```
+
+📌 **Browser Compatibility**
+
+The browser support is pretty good everything except IE11. Please do check [Can I Use](https://caniuse.com/#feat=mdn-css_types_color_space_separated_functional_notation) for details.
+
+### New Color functions
+
+The [CSS Color Module Level 4](https://www.w3.org/TR/css-color-4/) has few new color functions e.g. lab( ), lch( ) & [color ( )](https://alligator.io/css/color-function/). All these function will accept the new syntax described above. 
+
+
+
+### Which One to Choose? :thinking:
+
+As there are many options to provide color values, it's a tough decision to choose the one. Based on my experience I would explain certain points for each syntax, which can help to find out the right syntax as per the use-case.
+
+**Color Names**: Different browsers have their own idea for a particular named color. So, you may find differences how a color [[aquamarine]] looks in different browsers.
+
+**Hex Codes & RGB Values**: They both comes under a machine readbale format, which is not easy to understand by a dev. If you want to provide a lightness or darkness to a color you cannot provide it without changing the complete color code for both formats.
+
+**HSL/HSLA Values**: It is an intuitive colour format that mimics the real world.I would like to explain it more with an example:
+
+For example, you're probably sitting at a desk right now. Notice the colour of the desk. Let's say its a mahogany desk. It's colour values would be—
+
+>Hex: #4f2017;
+RGB: rgb(79, 32, 23);
+HSL: hsl(10, 55%, 20%);
+
+Now hold your hand above it, like a couple of inches above the surface. Your hand's shadow now makes the desktop a bit darker, right? Now, it's impossible to represent this colour change in hex or rgb, without changing the colour itself. But in hsl, it's a absolute easy- simply decrease the Lightness value, and bam! The colour remains the same, but with a bit of black mixed in— basically lessen the Lightness value.
+
+>Hex: #4f2017; --------------> #200d09;
+RGB: rgb(79, 32, 23); ------> rgb(32, 13, 9);
+HSL: hsl(10, 55%, 20%); ----> hsl(10, 55%, 8%);
+
+As you can see, the values of Hex and RGB have completely changed, whereas in HSL only one aspect has changed. Because of this, it becomes intuitively easy to create colour schemes on the fly.
+
+So, my recommendation would be to use hsl a lot because getting accent colors from base color is very easy.
+
+### Where else these values can be used?
+
+Not only with color property, these values are also used with other css properties like **background-color**, **border-color**, **caret-color**, **text-decoration-color**, **outline-color**, **box-shadow**, **linear-gradient**.
 
 -----
 
