@@ -62,7 +62,7 @@ Now let's see how this Operator works with different data types in javascript. I
 
 Optional Chaining works well with the dynamic properties with a different syntax. Let us see how:
 
-> The syntax for dynamic properties:
+> //  The syntax for dynamic properties:
   ?.[ ]
 
 ```javascript
@@ -147,3 +147,8 @@ delete db?.user;
 
 So, the user in the db object is only deleted if db is not null.
 
+----
+
+That's all for the article. Thanks for reading it. Please comment your feedback and suggestions.
+
+[Twitter](https://twitter.com/mishraaSoumya) | [LinkedIn](https://www.linkedin.com/in/mishraa-soumya/)
