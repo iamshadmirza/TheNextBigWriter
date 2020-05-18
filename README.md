@@ -63,6 +63,7 @@ You can also choose your topic as per your comfort level. Just create an issue w
 - [@ankibalyan](https://hashnode.com/@ankibalyan)
 - [@afrazmomin](https://hashnode.com/@afrazmomin)
 - [@sabique](https://hashnode.com/@sabiqueakhan)
+- [@fariya](https://hashnode.com/@fariya)
 
 ## Meet your Mentors
 
