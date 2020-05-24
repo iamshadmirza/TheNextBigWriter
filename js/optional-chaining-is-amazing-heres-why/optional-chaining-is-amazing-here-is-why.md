@@ -1,4 +1,4 @@
-**Optional Chaining** is the new javascript operator, which is included as part of EcmaScript 2020. The operator works for objects, arrays, and functions. They don't enable anything in terms of functionality, but they make the code a lot easy to read and write. Let's see how:
+**Optional Chaining** is the new javascript operator, which is included as part of EcmaScript 2020.The operator permits reading the value of a property located deep within a chain of connected objects without having to explicitly validate that each reference in the chain is valid.The operator works for validating the properties or methods in the object. They don't enable anything in terms of functionality, but they make the code a lot easy to read and write. Let's see how:
 
 I'm sure that we all in our coding experience have faced a common problem, for which we already have a solution.
 
@@ -14,13 +14,13 @@ I'm sure that we all in our coding experience have faced a common problem, for w
     }
 }
 
-// Error prone-version, could throw.
+// Error prone-version, could throw a TypeError if any intermediate key is undefined..
 const wishlistItem = db.user.wishlist.length;
 ```
 
 Let's assume that the above object is for loggedIn user details along with users wishlist data. Now, there can be users who have not added anything to their wishlist, so the wishlist property in the object might not be present for those users. But we have to pull the wishlist Ids from this object and make another request to fetch data.
 
-Till date, we choose any 1 from the below ways to handle such scenarios.
+Till date, we we would choose one of the below ways to handle such scenarios.
 
 **The Solution**
 
@@ -56,13 +56,13 @@ const wishlistItemCount = data?.user?.wishlist?.length;
 
 This magic solution has been achieved through **Optional Chaining (?.) Operator**.
 
-Now let's see how this Operator works with different data types in javascript. It only works with **Arrays**, **Objects** & **Functions**.
+Now let's see how this Operator works if the property in the object is a **Function** or an **array**.
 
-**Optinal Chaining with Dynamic Properties**
+**Optinal Chaining with Dynamic Properties / Arrays**
 
 Optional Chaining works well with the dynamic properties with a different syntax. Let us see how:
 
-> //  The syntax for dynamic properties:
+> //  The syntax for dynamic properties or array:
   ?.[ ]
 
 ```javascript
@@ -80,9 +80,9 @@ const userdata = {
     }
 }
 
-const primarySocialMedia = data?.user?.primarySocialMedia;
+const primarySocialMedia = data?.user?.primarySocialMedia;  // 'twitter'
 // the value of primarySocialMedia can be different or dynamic property.
-const socialMediaIUrl = data?.user?.socialLinks?.[primarySocialMedia];
+const socialMediaIUrl = data?.user?.socialLinks?.[primarySocialMedia]; // 'https://twitter.com/mishraaSoumya'
 ```
 
 Let me explain the above example how it works. So, In an app, a user can have multiple socialMediaAccounts, but there can be only 1 primary account, which can be different and dynamic. So, while pulling the url for primary social media account, a developer has to ensure that the dynamic value is a property in socialLinks object.
@@ -92,7 +92,7 @@ The same syntax works with the **arrays** also, where you are not sure if the in
 ```javascript
 // If the `usersArray` is `null` or `undefined`,
 // then `userName` gracefully evaluates to `undefined`.
-const userIndex = 13;
+let userIndex = 13;
 const userName = usersArray?.[userIndex].name;
 ```
 
