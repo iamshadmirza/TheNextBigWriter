@@ -1,6 +1,6 @@
 Nullish Coalescing Operator( **??** ) is one of the features of **ES2020**. It gives the ability to truly check the **nullish** values. It is another logical operator other than OR ( || ) , AND ( && ) and NOT ( ! ) operators.
 
-####**How it works?**
+#### How it works?
 
 The operator returns its **Right Hand Side (RHS)** operand when its **Left Hand Side (LHS)** operand is **null** or **undefined**, otherwise it will return the LHS operand.
 
@@ -15,9 +15,9 @@ Below are few other examples, which will give idea about more of it's use-cases.
 
 ![Few-Other-Examples](https://res.cloudinary.com/dyyr6kwla/image/upload/v1590839423/nullish-coalescing/few-other-examples_ohz48e.png)
 
-####**Comparison with other similar operators**
+#### Comparison with other similar operators
 
-The operator is simiar to logical **OR** operator and **Default Assignment** opertaor. If you would have noticed in the first example, then we are just assigning a default value to the prop [[searchBoxPlaceholder]], which can also be done in following way:
+The operator is simiar to logical **OR** operator and **Default Assignment** operator. If you would have noticed in the first example, we are just assigning a default value to the prop [[searchBoxPlaceholder]], which can also be done in following way:
 
 ![Compare-With-Default-Assignment](https://res.cloudinary.com/dyyr6kwla/image/upload/v1590841955/nullish-coalescing/comp_compare-with-default-assignment_nhpvqn.png)
 
@@ -27,17 +27,17 @@ Also, the logical operator **OR** works in similar manner, but it works for all 
 
 ![Compare-With-OR-Operator](https://res.cloudinary.com/dyyr6kwla/image/upload/v1590842888/nullish-coalescing/compare-with-OR-operator_wsmnua.png)
 
-Now, in the above example, the OR operator serves the purpose of assigning default value, in case the prop is any of the falsy values. But what if the user of the component doesn't wants to set any value for the placeholder. The OR operator will not allow to do this, as the empty string ( '' ) is a falsy value. So, now if we use **Nullish Coalescing Operator ( ?? )**. We can solve this problem and prop can accept empty string and will not show a placeholder value.
+Now, in the above example, the OR operator serves the purpose of assigning default value, in case the prop is any of the falsy values. But what if the user of the component doesn't wants to set any value for the placeholder? The OR operator will not allow to do this, as the empty string ( '' ) is a falsy value. So, now if we use **Nullish Coalescing Operator ( ?? )**. We can solve this problem and prop can accept empty string and will not show a placeholder value.
 
-#### **Summary**
+#### Summary
 
 * The nullish coalesing operator ( ?? ) is used to assign a default value, against the nullish values (null && undefined).
 
-* The operator has a very low prcedence in the [MDN Table](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence#Table). It has higher precedence than Logical AND ( && ) and Logical OR ( || ).
+* The operator has a very low prcedence in the [MDN Table](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence#Table). It has higher precedence* than Logical AND ( && ) and Logical OR ( || ).
 
-* The operator cannot be chained with && and || operators without using any explicit parentheses.
+* The operator cannot be chained with && and || operators without using any explicit* parentheses.
 
-#### **Support**
+#### Support
 
 * Check [Can I Use](https://caniuse.com/#search=nullish%20coalescing) for the browser support.
 
