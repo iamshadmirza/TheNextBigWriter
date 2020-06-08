@@ -8,7 +8,7 @@ Let's see how it works through some examples:
 
 ![Nullish-Coalescing-Operator-Ex-1](https://res.cloudinary.com/dyyr6kwla/image/upload/v1590838686/nullish-coalescing/nullish-example-1_xaqjn0.png)
 
-In the above example, the component Search has a prop [[searchBoxPlaceholder]].
+In the above example, the component Search has a prop `searchBoxPlaceholder`.
 As the prop is an optional one, so the component uses a default value when the prop is undefined. This is a best use-case of Nullish Coalescing operator because the developer doesn't wants to restrict component to always have a placeholder for the search input box. So using this an empty string can also be passed for the prop and the component will not use the default value for placeholder and would instead do not show a placeholder string, which can not be accomplished using the logical OR operator.
 
 Below are few other examples, which will give idea about more of it's use-cases.
@@ -17,11 +17,11 @@ Below are few other examples, which will give idea about more of it's use-cases.
 
 #### Comparison with other similar operators
 
-The operator is simiar to logical **OR** operator and **Default Assignment** operator. If you would have noticed in the first example, we are just assigning a default value to the prop [[searchBoxPlaceholder]], which can also be done in following way:
+The operator is simiar to logical **OR** operator and **Default Assignment** operator. If you would have noticed in the first example, we are just assigning a default value to the prop `searchBoxPlaceholder`, which can also be done in following way:
 
 ![Compare-With-Default-Assignment](https://res.cloudinary.com/dyyr6kwla/image/upload/v1590841955/nullish-coalescing/comp_compare-with-default-assignment_nhpvqn.png)
 
-The above example will no doubt work, but only if the value of prop [[searchBoxPlaceholder]] is undefined. But if the value for prop is [[null]], then the default assignment will not work.
+The above example will no doubt work, but only if the value of prop `searchBoxPlaceholder` is undefined. But if the value for prop is [[null]], then the default assignment will not work.
 
 Also, the logical operator **OR** works in similar manner, but it works for all the falsy values. Let us see with the below example what difference comes in the evaluation for the same condition with OR operator.
 
