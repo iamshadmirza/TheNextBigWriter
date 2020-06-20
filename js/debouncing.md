@@ -69,10 +69,16 @@ Note that we make a change in our HTML file and will be calling `callDebounce()`
 
 ![second-final.gif](https://cdn.hashnode.com/res/hashnode/image/upload/v1592511364053/fNxHJIJGF.gif)
 
-Notice how, instead of making more than a dozen calls for each letter in "Michael Scott", our input bar will only make calls whenever the delay between two keypresses is more than 300 milliseconds. In this case, 2 times.
+Notice how no call is made until a delay of 300ms is encountered. Instead of making more than a dozen calls for each letter in "Michael Scott", our input bar will only make calls whenever the delay between two keypresses is more than 300 milliseconds. In this case, 2 times.
 
-What happens here is that the function `debounce()` waits 300 milliseconds after the last keypress. Only when 300ms have passed and no keypress has been made, it fires off the `searchData()` function.
+When the user enters the first character "M", `debounce()` is triggered which waits for 300ms to fire off the `searchData()` function. But before 300ms have passed, the user enters another character which will wait another 300ms to fire off `searchData()` and so on. This will create multiple copies of the timer running in the background which will eventually call the `searchData()` function, which we don't want. So to clear out the timers in cases where consecutive keypresses are being made without a pause of 300ms, we make use of the inbuilt `clearTimeout()` function. This sets the `timer` to 0.
+
+This goes on until the user takes a pause after completing the word "Michael", this pause is noticed by the function which in turn fires off our `searchData()` function.
+
+In simple words, what happens here is that the function waits 300 milliseconds after the last keypress. Only when 300ms have passed and no keypress has been made, it fires off the `searchData()` function.
 
 ### Wrapping Up
 
 This was a simple demonstration of debouncing. Using this we can reduce the number of calls made several times in succession by a function, which will ultimately lead to an improvement in the performance of our website.
+
+** If you liked what you read, consider following me on Twitter - [@afraz_momin](https://twitter.com/afraz_momin) to stay updated. I plan on writing similar articles about JavaScript in the coming days! **
