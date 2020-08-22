@@ -1,10 +1,10 @@
-# How do i use absolute position in css 
+# How do I use absolute position in CSS 
 
- The absolute position is a powerful weapon in your design. It can literally place your elements anywhere you want. We can apply properties like  **top, right, bottom and left** over any element once the element has been made absolute. 
+ The **absolute** position is a powerful weapon in your design. It can literally place your elements anywhere you want. We can apply properties like  **top, right, bottom and left** over any element once the element has been made absolute. 
 
 <img width="100%" src="https://res.cloudinary.com/dbbunxz2o/image/upload/v1597494563/Frame_1_vhzkbl.svg">
  
- We can directly push the element to any extreme side by specifying to **0**,  
+ We can directly push the element to any extreme side by specifying that direction  to **0**,  
 For example **top: 0;** will push the element to the top of the page.     
 We can also use normal units like pixels which will move away from the extreme side to the given units,  
 For example **top: 50px;** will move away the element 50 pixels away from the top.
@@ -32,7 +32,9 @@ p{
 
 <img width="100%" src="https://res.cloudinary.com/dbbunxz2o/image/upload/v1597489582/Frame_1_lmj1ce.svg">
 
-If we uncomment the position property we can see that the div elements are out of flow with the document and only the p element consumes the space here, also all elements are overlapping, we can choose which element to present in the top layer by giving **z-index** value, the  element with higher z-index  will be present in the front.  
+If we uncomment the position property we can see that the div elements are out of flow with the document and only the p element consumes the space here.  
+We can also notice that all elements are overlapping, we can choose which element to be present in the top layer by giving **z-index** value, the element with higher z-index will be present in the front.  
+
  The element is positioned according to its containing block. By default the containing block is the document's body and not its parent div. In order to act as a child to its parent div we need to add **position: relative;** to its parent.
 
 ```HTML
@@ -58,7 +60,7 @@ If we uncomment the position property we can see that the div elements are out o
 ```
 <img src="https://res.cloudinary.com/dbbunxz2o/image/upload/v1597495812/box_1_shppir.svg">
 Here the child element is **relative** to its parent div element and not the whole document.
-The child element is relative to it's nearest parent element having the  property **position: relative**.
+.The child element is relative to it's nearest parent element having the property **position: relative**.
 
 ## Some cool uses for Absolute Position 
 
@@ -70,7 +72,7 @@ The child element is relative to it's nearest parent element having the  propert
 
 
 
-## Conclusion
-It's is best  not overuse absolute positioning because it can be pretty difficult to maneuver especially when  you are making your website responsive.
+## Takeaways
+We can place some elements where ever we want and choose what to be in front and back layer that would have been difficult or impossible to do with other methods,However it is recommended not to overuse **absolute** positioning because it can be pretty difficult to maneuver especially when  you are making your website responsive.
 
 
