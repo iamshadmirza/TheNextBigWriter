@@ -75,4 +75,5 @@ You can also choose your topic as per your comfort level. Just create an issue w
 - [Kamlesh Chandnani](https://twitter.com/_kamlesh_)
 - [Aditya Agarwal](https://twitter.com/dev__adi)
 - [Vishwa Mehta](https://twitter.com/VishwaMehta30)
+- [Aatika Khan](https://twitter.com/_aatikakhan_)
 - [Shad Mirza](https://twitter.com/iamshadmirza)
