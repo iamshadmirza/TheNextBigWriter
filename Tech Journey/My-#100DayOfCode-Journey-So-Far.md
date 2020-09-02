@@ -1,6 +1,6 @@
 ## A bit about me , Who am I ?
 
-Hey , my name is **Ameen**, I am 15 years old and currently in high school. I started learning to code when I was in second grade in school but never took it seriously until I was 11... That time I started learning **Unity** ( A Game Engine ) and **C#** but due to my PC's specs I couldn't continue on that path so instead of giving up  I started learning **Python**, learnt **PyGame** and a few more libs and built something basic with each of em .<br>
+Hey , my name is **Ameen**, I am 15 years old and currently in high school. I started learning to code when I was 6 but never took it seriously until I was 11... That time I started learning **Unity** ( A Game Engine ) and **C#** but due to my PC's specs I couldn't continue on that path so instead of giving up  I started learning **Python**,learnt **PyGame** with a few more libraries and built something basic with each of em .<br>
 After losing interest in python, I started my hunt again .  I found Web Development after exploring. I soon started learning **web development** it just clicked with me . Didn't take me much time to master **HTML** but than school came in the way . 2 years later I again continued the **web dev path** with the ** #100DaysOfCode** challenge and am having fun ever since.<br>
 I currently **work with** HTML,CSS,JavaScript and learning Svelte and built around 12-18 projects along side with it.That's enough about me let's get into the challenge.
 
