@@ -1,7 +1,7 @@
 # State Management in Flutter using Provider: Part 2
 
 In the previous [article](https://suresh.hashnode.dev/state-management-in-flutter-using-provider-part-1-cke8vk1cb00iny0s11lu933ch),
-we have discussed the problem of using `setState` to update the app's state in the moderate or complex app.
+we have discussed the problem of using `setState` to update the app's state in the moderate or complex app, This part will cover the solution to those problems. Let's start.
 
 ## What we are going to learn in this article
 
@@ -12,19 +12,19 @@ we have discussed the problem of using `setState` to update the app's state in t
   
 ### 1. What is Provider, Why we use it
 
-`Provider` is one of the most popular state management solution, created by  [Remi Rousselet](https://github.com/rrousselGit/provider), can be used in flutter app development.
+`Provider` is one of the most popular state management solution, created by  [Remi Rousselet](https://github.com/rrousselGit/provider), used for flutter app development.
 
-On the beginner stage, we use `setState` to update the app's state, because it is easy, and if we try to use some other moderate or say a complex technique like `flutter_bloc` or `Mobx`, this is not easy to switch from `setState` to these state management technique 😓
+On the beginner stage, we use `setState` to update the app's state, because it is easy, and switching from `setState` to other complex techniques like `flutter_bloc` or `Mobx` is not that easy to follow. 😓
 
-Provider uses InheritedWidget internally, to manage all complex computations and provide a simple feature to manage our app's state
+Provider uses `InheritedWidget` internally, to manage all complex computations and provide a simple feature to manage our app's state
 
->Why `provider`? We have some other techniques that can be used for managing state.
+> Why `provider`? We have some other techniques that can be used for managing state.
 
-Passing data via constructors is not a good idea, in doing so, all those widgets will rebuild just for passing the data. This may cause the performance issue and our code get too much complicated.
+Passing data via constructors is not a good idea. In doing so, all those widgets will rebuild just for passing the data. This may cause the performance issue and our code get too much complicated.
 
 So, what we should do now? We will use the provider
 
->`flutter_bloc` & `Mobx` uses provider internally 🥳 And now the flutter team also supports to use provider.
+> `flutter_bloc` & `Mobx` uses provider internally 🥳 And now the flutter team also recommends using the provider.
 
 So, let's learn about the types of provider
 
@@ -45,7 +45,7 @@ Complete [list of all objects](https://pub.dev/documentation/provider/latest/pro
 
 So, let's discover more about the categories
 
-### Provider
+#### Provider
 
 This is a very basic form of `Provider`, manages the lifecycle of the value it provides by delegating to a pair of `Create` and `Dispose`. This can provide any type of value.
 
@@ -72,9 +72,9 @@ class Stateless extends StatelessWidget {
 
 ```
 
-### ListenableProvider
+#### ListenableProvider
 
-ListenableProvider is a bit different from the other providers in the list, as this provider provides `state source` as the value.
+`ListenableProvider` is a bit different from the other providers in the list, as this provider provides `state source` as the value.
 
 Other providers generally provide the single value from the `object<T>`, but `ListenableProvider` provides the whole model as the value to its dependents.
 When the state changes in Listenable, it notifies the provider about the state change. Now provider, via it's `InheritedWidget`
@@ -82,15 +82,15 @@ marks it's listening dependent to rebuild.
 
 In the above example, the whole `Counter()` object is being returned from `create`, as this value is provided to the dependents, dependents use this value as `Counter()` and updates it's state and rebuilds again to show the updated value on the screen.
 
-### ChangeNotifierProvider
+#### ChangeNotifierProvider
 
 In the change notifier provider, everything is the same as `ListenableProvider`, one additional specification of `ListenableProvider` for ChangeNotifier is, it automatically calls `ChangeNotifier.dispose` to dispose the provider when needed.
 
-### ValueListenableProvider
+#### ValueListenableProvider
 
 `ValueListenableProvider` gets the value change notification from  `ValueListenable`, and provides the value to its dependent as state. `ValueListenableProvider<T>` receives values of type T from a `ValueListenable<T>`.
 
-### StreamProvider
+#### StreamProvider
 
 StreamProvider gets the events from a subscribed stream and provides these events(values) to its dependent widgets. we can use `StreamProvider<T>` to receive events of type T from a `Stream<T>`.
 
@@ -109,7 +109,7 @@ StreamProvider<int>(
 
 In the above example, `StreamProvider` emits `count` value ranges from 0 to 100, on the interval of 100 milliseconds, dependents can use these events for some purpose.
 
-### FutureProvider
+#### FutureProvider
 
 `FutureProvider` gets the value of a future and provides to its dependents. We can use `FutureProvider<T>` to get the `Future<T>` value and this value represents the state.
 
@@ -123,7 +123,7 @@ FutureProvider<int>(
 ),
 ```
 
-This, `FutureProvider<int>` gives the binary value 0 and 1, in the initial state it provides the 0, and as soon as future resolves (after 4 seconds)this provides the 1 as value
+This, `FutureProvider<int>` gives the binary value 0 and 1. In the initial state, it provides the 0, and as soon as future resolves (after 4 seconds)this provides the 1 as a value
 
 ### 3. How to use a provider in our code
 
@@ -133,11 +133,11 @@ Provider has some methods and we will look at 3 major one
 - `context.read<T>()`, which returns `T` without listening to it
 - `context.select<T, R>(R cb(T value))`, which allows a widget to listen to only a small part of `T`.
   
->Here `<T>` is a type of value, like `String`, `int`, `double` or any other complex type
+> Here `<T>` is a type of value, like `String`, `int`, `double` or any other complex type
 
 We can also use the `static` method `Provider.of<T>(context)` or  `Provider.of<T>(context, listen : false)` which will behave similarly to `watch`/`read` respectively
 
-### How these methods work
+### How these methods work 🤔
 
 These methods will look up in the widget tree starting from the widget associated with the `BuildContext`, and will return the nearest variable of type `T` found (or throw if nothing is found).
 
@@ -156,9 +156,9 @@ we must pass the `type<>` here in `watch()`, searches the same type of data in t
 
 Similarly, `read<T>()` will look for the variable of type `T` in the widget tree from it's `BuildContext` and retrieves the data.
 
- In the case of `select((T value))`, it only listens to those parts of `T`, if state change happens in this part, only then it's dependents will update there value. It prevents widget from unnecessarily rebuilding if something other changes.
+In the case of `select((T value))`, it only listens to those parts of `T`, if state change happens in this part, only then it's dependents will update there value. It prevents widget from unnecessarily rebuilding if something other changes.
 
- Now, one static method which works the same as the above method `Provider.of<T>(context)` this method performs the same as `watch()`, listen to changes in state `T`
+Now, one static method which works the same as the above method `Provider.of<T>(context)` this method performs the same as `watch()`, listen to changes in state `T`
 
  ```dart
 class Home extends StatelessWidget {
@@ -188,9 +188,9 @@ The consumer gets the value from ancestors using `Provider<T>` and passes this v
 
 ### Takeaways
 
-- We've learned about Provider and why we use it
-- Discussed types of Provider in detail
-- How we can use this cool thing in our code
+- We learned how `provider` helps to overcome the limitations of `setState` in a complex project
+- Discussed 5 different types of `provider`
+- We got to know that `flutter_bloc` & `Mobx` also uses `provider` internally
 - Got introduction about Consumer & Selector Widget
   
 So, that's all for this article. I hope this helped you to understand the provider in Flutter. If I'm left with something crucial, please let me know in the comment section.
