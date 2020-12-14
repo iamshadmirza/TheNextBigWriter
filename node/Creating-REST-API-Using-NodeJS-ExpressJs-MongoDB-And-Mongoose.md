@@ -2,71 +2,124 @@ Creating REST API Using NodeJS, ExpressJs, MongoDB, And Mongoose
 
 Hello Everyone 
 
-My Name is  Minhaj Ahmad khan and I'm a Front-end developer. This is my first blog where I create a REST API using NodeJS, ExpressJs, MongoDB, and Mongoose. I'm super excited to let's get started.
+My Name is  Minhaj Ahmad Khan and I'm a Front-End developer. This is my first blog where I create a REST API using NodeJS, ExpressJs, MongoDB, and Mongoose. I'm super excited so let's get started.
 
 
  A REST API (also known as RESTful API) is an application programming interface that conforms to the constraints of REST architecture. REST stands for representational state transfer. Application programming interfaces (APIs) are everywhere. It is a software that allows two applications to communicate with each other over the internet and through various devices. Every time you access an app like Instagram or check the weather on your smartphone, an API is used. 
 
 
-So let’s start and write some Javascript and build a RESTful API in Node.js.
+##  Prerequisite 
 
-**Requirements**
 
-Node.js
+-  Node
 
-Express.JS
+-  MongoDB
 
-MongoDB
+-  Create a repository
 
-Mongoose (connect our back end to a MongoDB database)
+- Express
 
-Postman (Postman is a great tool when trying to dissect RESTful APIs made by others or test ones you have made yourself. )
+- Mongoose
 
-**Installation**
-1.  Install node(if you have already  node on your machine then skip this step) 
-2.  Install MongoDB (if you have already  MongoDB  on your machine then skip this step)
-3.  Let's create a repository called **RestfulAPI** 
-4.  Open **RestfulAPI** repository on command line terminal
-5.  
-```npm init -y  
-```  initializing our project 
+- Nodemon
 
-Now we can see the **package.json** file which will include all of the project’s packages we need to run our API.
+- Postman
 
-###  Installing Express
+
+
+
+
+
+
+
+
+
+  ### Install Node
+
+  If you have already  Node on your machine then skip this step. [Know How To Download & Install Node.js](https://www.edureka.co/blog/node-js-installation/) 
+
+  ### Install MongoDB 
+
+   if you have already  MongoDB  on your machine then skip this step.  [Know How To Download & Install MongoDB](https://www.edureka.co/blog/install-mongodb-on-windows/) 
+
+
+
+  ### Install Express
+
 Express is a fast, assertive, essential, and moderate web framework of Node.js that helps manage a server and routes.
 
-Let's install Express with node 
+Let's install Express by running this command on the shell. 
+```
+npm install express
+```
 
-6.
-```npm install express```
 
-### installing Mongoose 
+
+
+### Install Mongoose 
+
 Mongoose is a way to make a connection with the MongoDB database. It provides MongoDB validation and query in a very simple manner and it makes development fast.
 
-Let's install Mongoose with node
-
-7.
-```npm install mongoose```
-
-**Install nodemon** 
-
-nodemon is a tool that helps develop node. js based applications by automatically 
-
-restarting the node application when file changes in the directory are detected.
+Let's install Mongoose with Node by running this  command on shell 
+```
+npm install mongoose
+```
 
 
 
-8.
-``` npm install nodemon```
+
+### Install Nodemon 
+
+Nodemon is a tool that helps develop Node. js based applications by automatically
+restarting the Node application when file changes in the directory are detected.
 
 
+
+Let's install Nodemon by running this command on shell
+ ```
+npm install Nodemon
+```
+
+
+
+
+
+### Postman
+
+ Postman is a great tool when trying to dissect RESTful APIs made by 
+ others or test ones you have made yourself. [Know How To Download & Install Postman
+](https://www.softwaretestingmaterial.com/install-postman/) 
 
 We now have everything needed to start building our  API.
 
-We are going to create API which maintains student record with the help of API we can perform create read update and delete (CURD) Operation.
+## Let's Code
+
+We are going to create a RESTFUL API that maintains student records. We will perform Create, Read, Update, Delete (CRUD) Operation. These are the following steps 
 
 
+1. Create Repository 
+
+2. At Boilerplate
+
+3. Connect to MongoDB
+
+4. Define Schema
+
+5. Write CRUD Operation
+
+
+  ### 1. Create a repository
+
+  Let's create a repository called **RestfulAPI** 
+
+  Open **RestfulAPI** repository on shell
+  
+`npm init -y` initializing our project 
+
+ Now we can see the **package.json** file which will include all the packages we 
+ need.
+
+### 2. Add Boilerplate
 
 Let's write some javascript that will initialize and define endpoints in app.js
 avoid **get()** we discuss after a while.
@@ -88,14 +141,14 @@ app.listen(port , ()=>{
     console.log(`connection is  extablished`)
 });
 ```
-require express now we got express as a function and create new constant with the help of express for use express method and properties.
+Require express now we got express as a function and create new constant with the help of express for use express method and properties.
 
 listen() method creates a listener on the specified port or path.
 
 
 
 
-Let's run this code  ``` nodemon src/app.js``` and what happened 
+Let's run this code  ``` nodemon src/app.js``` and see what happens
 
 
 
@@ -107,6 +160,8 @@ Let's run this code  ``` nodemon src/app.js``` and what happened
 ![Screenshot (761).png](https://cdn.hashnode.com/res/hashnode/image/upload/v1607604127311/lYlNVcPr5.png)
 
  Cool!  the connection is established let's move forward  
+
+### 3. Connect to MongoDB
 
 Let's connect MongoDB with mongoose
 for that, we need to create a folder and file inside src folder ```src/database/connection.js ``` where write some javascript code to connect to MongoDB to the mongoose.
@@ -124,12 +179,12 @@ mongoose.connect(url, {
     console.log(`connection unsuccessful ${e}`)
 })
 ```
-We can connect to MongoDB with the mongoose.connect() method.
 
-```mongoose.connect('mongodb://localhost:27017/students-record', {useNewUrlParser: true,useCreateIndex: true,useUnifiedTopology: true});```
+As we can see in the above code block we are using `mongoose.connect()` method to connect to MongoDB database.
 
-This is the minimum needed to connect the students-record database running locally on the default port (27017).
-after that, we need to call the connect function with the help of mongoose where we pass URL and a call back function that returns a promise. to avoid
+We need this to connect the student record database running locally on the default port (27017).
+ 
+Then we need to call the connect function with the help of mongoose where we pass URL and a call back function that returns a promise. To avoid
 deprecation Warnings set ```useCreateIndex: true,
   useNewUrlParser: true,
   useUnifiedTopology: true```
@@ -154,22 +209,24 @@ app.listen(port , ()=>{
 });
 ```
 
-Now run ** app.js** file and see what happened 
+Now run ** app.js** file and see what happens 
 
 
 
 ![Screenshot (765).png](https://cdn.hashnode.com/res/hashnode/image/upload/v1607606304478/TJXDTRO0j.png)
 
-Cool! database connection successful 
+Cool! database connection was successful 
+
+ ### 4. Defining Schema
 
 
-Now let's define our database schema for that we need to create a folder and file inside src  **src/model/studentschema.js**. to know more about schema read  [official document here ](https://mongoosejs.com/docs/guide.html#definition) 
+Now let's define our database schema for that we need to create a folder and file inside src  **src/model/student-schema.js**. To know more about schema read  [official document here ](https://mongoosejs.com/docs/guide.html#definition) 
 
 ```
 
 const mongoose = require("mongoose");
 
-const studentSchema = new mongoose.Schema({
+const student-schema = new mongoose.Schema({
     name: {
         type: String,
         required: true,
@@ -196,13 +253,13 @@ const studentSchema = new mongoose.Schema({
     }
 })
 
-const student = new mongoose.model('student', studentSchema)
+const student = new mongoose.model('student', student-schema)
 
 module.exports = student;
 
 ``` 
 
-after defining schema we defined collection(table) with the help of a ```mongoose.model``` method and pass collection name ```student``` and schema name ```studentSchema``` then exports this collection because we need to use in **app.js** file.
+After defining schema we defined collection(table) with the help of a ```mongoose.model``` method and pass collection name ```student``` and schema name ```student-schema``` then exports this collection because we need to use in **app.js** file.
 
 
 
@@ -223,14 +280,16 @@ app.listen(port , ()=>{
     console.log(`connection is  extablished`)
 });
 ``` 
-cool! database connected, the schema defined properly everything is going good let's move the second part of our blog which is create, read, update, delete  (CURD) operation. 
+Cool! database connected. The defined schema is working correctly now let's move on to the second part of the blog which is create, read, update, delete  (CRUD) operation. 
+ 
 
+## CRUD Operation 
 
+ 
 
+###  Create Data
 
-### Now let’s begin with the POST method.
-
-The POST method sends data to the server.  [know more about POST method](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/POST) 
+The `POST` method sends data to the server.  [Know more about POST method](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/POST) 
 ```
 const express = require('express');
 const app = express();
@@ -244,7 +303,7 @@ app.post('/student-registration', (req, res) => {
     user.save().then(() => {
         res.status(201).send(user)
     }).catch((e) => {
-        res.status(400).send(e)
+        res.status(500).send(e)
     })
 })
 
@@ -258,7 +317,7 @@ app.listen(port , ()=>{
 This method will accept **name, class, email, phone, address** from the ```req.body```
 
 POST method takes two parameters so we passed **root** and  **callback function**.
-the callback function has two parameters req and res. By using ```req.body```  we are fetching data from the body and store in our collection(table) by ```save()```.
+The callback function has two parameters req and res. By using ```req.body```  we are fetching data from the body and store in our collection(table) by ```save()```.
 
 **Let's test our post API using postman 
 **
@@ -270,9 +329,9 @@ the callback function has two parameters req and res. By using ```req.body```  w
 
 Wow, it's working fine data successful store in our collection.
 
-### Next, let’s create a GET method.
+###  Read Data
 
-This method will return All Student records.  [know more about GET method](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/GET) 
+This method will return All Student records.  [Know more about GET method](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/GET) 
 
 Now let’s  create a router with our first GET method:
 
@@ -289,7 +348,7 @@ app.get('/show-student-record', async (req, res) => {
         const showStudentData = await student.find()
         res.status(200).send(showStudentData)
     } catch (e) {
-        res.status(400).send(e)
+        res.status(500).send(e)
     }
 })
 
@@ -298,7 +357,7 @@ app.listen(port , ()=>{
 });
 
 ```
-```.find()``` return all the student records from student.if the student record cannot be found, the method returns the error message and status code 404 record not found
+```.find()``` return all the student records from student. If the student record cannot be found, the method returns the error message and status code 500.
 
  ** Let's test our post API using postman **
 
@@ -310,8 +369,9 @@ It's working perfectly fine we can see all records in our database
 
 
 
-### Now for updating a Student record  with a PATCH method 
-PATCH method can be used to update partial resources. For instance, when you only need to update one field of the resource.  [know more about PATCH method](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/PATCH) 
+### Update Data
+
+PATCH method can be used to update partial resources. For instance, We need to update one field of the resource hence we are using the **PATCH** method.  [Know more about PATCH method](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/PATCH) 
 
 ```
 app.patch('/student-record-update/:id', async (req, res) => {
@@ -322,13 +382,13 @@ app.patch('/student-record-update/:id', async (req, res) => {
         })
         res.status(200).send(studentUpdate)
     } catch (e) {
-        res.status(400).send(e)
+        res.status(500).send(e)
     }
 })
 ```
 
-functions need an element called ObjectID to be able to tell the database which specific element you want to update. ObjectID created automatically when we insert a new record into your database after that we are adding an ObjectId in the URL then we require ObjectID from a URL  like this                  ```   const _id =req.params.id;```.
-after that  ```findByIDAndUpdate()```  where the first parameter is ```_id ``` and the second is the data that we are updating  ```req.body```.``` {new:true} ``` update student collection immediate
+Functions need an  `ObjectID` to be able to tell the database which specific document you want to update. `ObjectID` created automatically when we insert a new record into your database after that we are adding an `ObjectID` in the URL then we require `ObjectID` from a URL  like this   ```   const _id =req.params.id;```.
+After that  ```findByIdAndUpdate()```  where the first argument is an ```_id ``` and a second argument is an Object that will update the data.
 
 ** Let's test our  API  using the PostMan **
 
@@ -345,7 +405,9 @@ After updating student record
 ![after update.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1607770706984/IJU9rgg9r.png)
 
 
-###  Finally let’s create a DELETE method to remove the student record 
+###  Delete Data
+
+The DELETE method deletes the specified resource.  [Know more about DELETE method](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/DELETE) 
 
 ```
 app.delete('/student-record-delete/:id', async (req, res) => {
@@ -354,11 +416,11 @@ app.delete('/student-record-delete/:id', async (req, res) => {
         const deleteRecord = await student.findByIdAndDelete(_id)
         res.status(200).send(deleteRecord)
     } catch (e) {
-        res.status(400).send(e)
+        res.status(500).send(e)
     }
 })
 ```
-functions need an element called ObjectID to be able to tell the database which specific element you want to delete. it's very similar to a patch request instead of ```findByIdAndUpdate``` we are using find ```findByIdAndDelete``` where we are passing _id in both arguments like this ```findByIdAndDelete({_id:_id})``` we know that key and value are same so we write like this ```findByIdAndUpdate```.
+Functions need an ObjectID to be able to tell the database which specific document you want to delete. It's very similar to a patch request instead of ```findByIdAndUpdate``` we are using find ```findByIdAndDelete``` where we are passing _id in both arguments like this ```findByIdAndDelete({_id:_id})``` we know that key and value are same so we write like this ```findByIdAndDelete(_id)```.
 
 **Let's test our API  **
 
@@ -373,13 +435,23 @@ After deleting  student record
 
 ![after delete.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1607771906081/6Fpcp8CLZ.png)
 
-That's it, I hope it was helpful to you. Thanks for reading.
+That's it, I hope it was helpful to you. Thanks for reading you can follow me on Twitter
 
 
-**Minhaj ahmad khan**
+ [Minhaj Ahmad Khan](https://twitter.com/MinhajAhmadKha7) 
 
 
  
+
+
+
+
+
+
+
+
+
+
 
 
 
