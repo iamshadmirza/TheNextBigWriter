@@ -1,0 +1,43 @@
+In this Blog, we'll learn about How JavaScript actually works under the hood.
+
+We have always heard people mentioning that **JavaScript is Single Threaded.**
+### What Does that means?
+In very simple language it means that, JS is running at most one line of JS code at a time, it can switch back and forth between different lines of code very very quickly so we don't really think that only one thing is happening at a time.
+
+Before entering into Various technicalities let's clear some basics and understand what is a process & what actually a thread is:
+
+### Process: 
+A process is a program under execution, i.e. a running program and is created when a program starts execution. A process can have multiple threads.
+
+### Threads:
+A thread is the smallest sequence of programmed instructions that can be managed independently by a scheduler, which is typically a part of the operating system.
+
+> The primary difference is that threads within the same process run on a shared memory space, while processes run in separate memory spaces.
+
+### Single Thread Event Loop Work Flow
+Java Script follows *Single Threaded with Event Loop Model*. As JS follows this architecture, it can handle more and more concurrent client requests very easily. 
+
+Here are **Single Threaded Event Loop Model Processing Steps**:
+1. Clients Send request to Web Server.
+
+2. JS Web Server internally maintains a Limited Thread pool to provide services to the Client Requests.
+
+3.  JS Web Server receives those requests and places them into a Queue. It is known as **“Event Queue”**.
+
+4. Node JS Web Server internally has a Component, known as **“Event Loop”**. (Why it got this name is that it uses indefinite loop to receive requests and process them). 
+
+5. Event Loop checks any Client's Request is placed in Event Queue. If no, then wait for incoming requests for indefinitely.
+
+7. If yes, then pick up one Client's Request from Event Queue. Starts processing that Client's Request
+
+8. If that Client's Request Does Not requires any Blocking IO Operations, then process everything, prepare response and send it back to client.
+
+9. If that Client's Request requires some Blocking IO Operations like interacting with Database, File System, External Services then it will follow different approach 
+
+- Checks Threads availability from Internal Thread Pool
+
+- Picks up one Thread and assign this Client Request to that thread.
+
+- That Thread is responsible for taking that request, process it, perform Blocking IO operations, prepare response and send it back to the Event Loop
+
+- Event Loop in turn, sends that Response to the respective Client
