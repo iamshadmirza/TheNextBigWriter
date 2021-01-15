@@ -68,6 +68,7 @@ You can also choose your topic as per your comfort level. Just create an issue w
 - [@minhajspace](https://hashnode.com/@minhajspace)
 - [@hussamkhatib](https://hashnode.com/@hussamkhatib)
 - [@coder_crafter](https://hashnode.com/@Coder_Crafter)
+- [@desaihetav](https://hashnode.com/@desaihetav)
 
 ## Meet your Mentors
 
