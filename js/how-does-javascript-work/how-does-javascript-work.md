@@ -1,31 +1,34 @@
-Hello, 👋 this is Shivam Verma, this is my first blog and in this, I will help you to understand the working of JavaScript. Let's Begin!!
+Hello, I am Shivam Verma. This is my first blog and we will try to understand the working of JavaScript today. Let's begin!!
 
-#### Ever wondered how JavaScript works under the hood?     
+## Ever wondered how JavaScript works under the hood?     
 
 Well by the end of this blog you will have a clear understanding of that by knowing two important concepts that make it possible
-1. **Execution Context**
-1. **Call Stack**          
+1. Execution Context
+2. Call Stack         
 
 ### 1. Execution Context
 
 Before diving deep into the working of `JavaScript` remember one thing
+
 > "Everything in JavaScript happens inside an `Execution Context`" 
+
+`Execution Context` can be thought of as an imaginary box where all the storage as well as code execution happens. 
 
 `Execution Context(EC)` can be classified into two main types:
 - Global Execution Context(GEC)
 - Functional Execution Context(FEC)
 
-I will specify when which `EC` is created, other than that we will refer to it commonly as `Execution Context`
+I will specify during further explaination that which type of `Execution Context` is being created at that moment, other than that we will refer to it commonly as `Execution Context`
 
 So the `Execution Context` is divided into 2 parts
-- **Memory Component**
-- **Code Component** 
+- Memory Component
+- Code Component
  
 The **Memory Component** also known as the **Variable Environment** allocates memory and stores variables and functions as *key: value* pairs.
 
 The **Code Component** also known as the **Thread of Execution** runs through the JavaScript program and executes line by line.
 
-Now If I may present the `Execution Context` visually as a diagram it can be shown as:
+Now if I may present the `Execution Context` visually as a diagram it can be shown as:
 
 ![Group 6.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1611776579826/9DOXVBrgh.png)
 
@@ -34,8 +37,8 @@ Another line to keep in mind for working of JavaScript
 
 This means that JavaScript can only execute one command at a time in a specific order. It can only go to the next line only if the current line is finished executing.
 
-I know you might be thinking that, What about asynchronous programming in JavaScript? Is there no asynchronous programming in JavaScript? Did I get fooled by that Indian guy on YouTube?
-Calm down I will write about that in upcoming blogs, let's stick to our topic for this blog.
+I know you might be thinking that, What about asynchronous programming in JavaScript? Is there no such concept? Did I get fooled by that tutorial on YouTube?
+Calm down I will write about that in upcoming blogs, let's stick to our topic for the day.
 
 So coming back to `Execution Context` just remember for now that only one line at a time can be executed in JavaScript.
 
@@ -44,11 +47,11 @@ Let's understand the working in more detail with the help of a code example.
 ![code_ec.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1611832015671/EjLaexeUw.png)
 
 
-Now when we run this code a `Global Execution Context(GEC)` is created
+Now when we run this code, a `Global Execution Context(GEC)` is created
 
 The `Execution Context` is created in two phases.
-1. **Memory Creation Phase**
-1. **Code Execution Phase**
+1. Memory Creation Phase
+2. Code Execution Phase
 
 In the first phase i.e the **Memory Creation Phase**, JavaScript allocates memory to all the variables and functions.
 The JS Engine goes through the code line by line. It encounters variable declaration at line 1 and allocates memory to the variable `n`. Then it goes to line 2 and allocates memory for a function named `square`.
@@ -93,20 +96,20 @@ A visual representation of the whole process discussed:
 
 ![FEC1.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1611861952440/MPoJltLlU.png)
 
-Now the control moves to line 7, where it finds another function invocation `square(4)` with value 4 as an argument. Again brand new `FEC` will be created and the whole procedure used to invoke `square(n)` as explained above will be repeated and the value will be evaluated and returned into square4.
+Now the control moves to line 7, where it finds another function invocation `square(4)` with value 4 as an argument. Again brand new `FEC` will be created. The whole procedure used to invoke `square(n)` as explained above will be repeated. The value will be evaluated and returned into square4.
 
-If there is a function inside a function then a nested `FEC` will be created inside the `FEC` which is inside the `GEC`. This has no end it can go beyond and beyond.
+If there is a function inside a function. Then a nested `FEC` will be created inside the `FEC` which is inside the `GEC`. This has no end it can go beyond and beyond.
 
 After the execution of the whole program is finished, The `Global Execution Context` also gets deleted.
 
-Phew, that was all about the **"Execution Context"**, now you know how is it created and how it executes the code which we write in JavaScript.
+Phew, that was all about the **"Execution Context"**, now you know how is it created and how it executes the code.
 
 Remember I said all this nested `Execution Context` can go on and on, so how does JavaScript handle all this complicated nesting and control of the program.
 Luckily JavaScript engine has a stack to manage all these things and we call it 
 **The Call Stack**, let's learn more about it in detail.
 
 ### 2. Call Stack
-You must be familiar with the stack data structure. If not please read about it.
+You must be familiar with the stack data structure. If not, please read it [here](https://www.geeksforgeeks.org/stack-data-structure/#:~:text=Stack%20is%20a%20linear%20data,one%20another%20in%20the%20canteen.)
 So as we know Stack is a LIFO(Last in First Out) Data Structure.
 To enter data in the stack we use `push` and to delete we use the `pop` operation.
 The same is the working of the **Call Stack** in JS.
@@ -139,11 +142,9 @@ Awesome content by Akshay, visit the link and watch the videos.
  [Namaste JavaScript Playlist](https://www.youtube.com/playlist?list=PLlasXeu85E9cQ32gLCvAvr9vNaUccPVNP) 
 
 That's all from my side.
-How much did you understand and like learning through this blog and the visual diagrams? Let me know in the comments.
+How was it? Let me know in the comments.
 
 If you really liked it then do share it with your friends or colleagues.
 
-Have any doubt or want to work on a project together then follow me on Twitter and message me there.
+Have any doubt or want to work on a project together then follow me on [Twitter](https://twitter.com/the_shivamverma) and message me there.
 Also, comment on what should be the next topic and I will try to make that possible.
-
-
