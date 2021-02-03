@@ -63,6 +63,14 @@ You can also choose your topic as per your comfort level. Just create an issue w
 - [@ankibalyan](https://hashnode.com/@ankibalyan)
 - [@afrazmomin](https://hashnode.com/@afrazmomin)
 - [@shradha](https://hashnode.com/@shradha)
+- [@sabique](https://hashnode.com/@sabiqueakhan)
+- [@fariya](https://hashnode.com/@fariya)
+- [@uroojahamad](https://hashnode.com/@uroojahamad)
+- [@minhajspace](https://hashnode.com/@minhajspace)
+- [@hussamkhatib](https://hashnode.com/@hussamkhatib)
+- [@coder_crafter](https://hashnode.com/@Coder_Crafter)
+- [@desaihetav](https://hashnode.com/@desaihetav)
+- [@theshivamverma](https://hashnode.com/@theshivamverma)
 - [@VarthanV](https://hashnode.com/@VarthanV)
 
 ## Meet your Mentors
@@ -71,4 +79,5 @@ You can also choose your topic as per your comfort level. Just create an issue w
 - [Kamlesh Chandnani](https://twitter.com/_kamlesh_)
 - [Aditya Agarwal](https://twitter.com/dev__adi)
 - [Vishwa Mehta](https://twitter.com/VishwaMehta30)
+- [Aatika Khan](https://twitter.com/_aatikakhan_)
 - [Shad Mirza](https://twitter.com/iamshadmirza)
