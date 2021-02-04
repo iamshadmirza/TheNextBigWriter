@@ -70,6 +70,7 @@ You can also choose your topic as per your comfort level. Just create an issue w
 - [@coder_crafter](https://hashnode.com/@Coder_Crafter)
 - [@desaihetav](https://hashnode.com/@desaihetav)
 - [@theshivamverma](https://hashnode.com/@theshivamverma)
+- [@akshayrajput](https://hashnode.com/@AkshayRajput)
 
 ## Meet your Mentors
 
