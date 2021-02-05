@@ -19,7 +19,7 @@ Once your username is added you can select "The Next Big Writer" under publicati
 
 ## Telegram group for questions and update
 Please join the telegram group and connect with your mentors. We will be able to answer your questions here as well.  
-Group link 👉 https://t.me/joinchat/LVu-1VBsGlShlcH1_F2mhQ
+Group link 👉 https://t.me/thenextbigwriter
 
 ## How to Contribute?
 
