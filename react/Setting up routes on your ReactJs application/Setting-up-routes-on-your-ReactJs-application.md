@@ -11,14 +11,11 @@ In the old architecture, the server was used to fetch data from the database and
 ## Let’s learn about some of the terminologies while dealing with `react-routing.` ✨
 Three primary categories of components in react-router:
 
-- 
-Routers, like `<BrowserRouter>` and `<HashRouter>`
+- Routers, like `<BrowserRouter>` and `<HashRouter>`
 
-- 
-Route matchers, like `<Route>` and `<Switch>`
+- Route matchers, like `<Route>` and `<Switch>`
 
-- 
-And navigation, like `<Link>`, `<NavLink>`, and `<Redirect>`
+- And navigation, like `<Link>`, `<NavLink>`, and `<Redirect>`
 
 All of the components that you use in the web app should be imported from `react-router-dom`.
 
