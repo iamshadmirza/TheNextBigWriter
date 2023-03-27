@@ -1,4 +1,4 @@
-# The Next Big Writer
+# The Next Big Writer [inactive]
 
 ## About
 
